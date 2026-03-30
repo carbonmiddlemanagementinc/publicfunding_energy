@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.S. Energy Public Funding: 50-Year Comparison: Carbon Middle Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inconsolata:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:         #252628;
+    --slate:       #3B3D42;
+    --ash:         #6E6F69;
+    --linen:       #EAE6DE;
+    --chalk:       #FFFFFF;
+    --plains:      #B8A882;
+    --violet:      #535470;
+    --aegean:      #2A4A5E;
+    --steel:       #6B7C8D;
+    --frost:       #C8D5D3;
+    --periwinkle:  #7B82C4;
+    /* aliases for chart data */
+    --carmine:     #535470;
+    --spruce:      #2A4A5E;
+    --chart-1: #252628;
+    --chart-2: #535470;
+    --chart-3: #2A4A5E;
+    --chart-4: #B8A882;
+    --chart-5: #6B7C8D;
+    --chart-6: #7B82C4;
+    --font-display: 'Spectral', Georgia, serif;
+    --font-body:    'Source Sans 3', 'Helvetica Neue', sans-serif;
+    --font-mono:    'Inconsolata', 'Courier New', monospace;
+    --font-serif:   'Spectral', Georgia, serif;
+    --space-xs:4px; --space-sm:8px; --space-md:16px; --space-lg:24px;
+    --space-xl:40px; --space-2xl:64px; --space-3xl:96px;
+    --radius-sm:2px; --radius-md:4px; --radius-lg:8px;
+    --border-thin:   1px solid var(--plains);
+    --border-mid:    1px solid var(--ash);
+    --border-strong: 1px solid var(--ink);
+    --max-width: 1100px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--chalk); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .page { max-width: var(--max-width); margin: 0 auto; padding: var(--space-3xl) var(--space-xl); }
+  .section { margin-bottom: var(--space-3xl); }
+
+  /* ── MASTHEAD ── */
+  .masthead-rule-top { width: 100%; height: 3px; background: var(--ink); margin-bottom: var(--space-lg); }
+  .masthead { margin-bottom: var(--space-3xl); padding-bottom: 0; }
+  .masthead-flag { display: grid; grid-template-columns: 1fr auto; align-items: baseline; margin-bottom: var(--space-md); }
+  .masthead-wordmark { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ash); }
+  .masthead-version { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: var(--plains); }
+  .masthead-name { font-family: var(--font-display); font-size: 64px; font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; color: var(--ink); margin-bottom: var(--space-lg); }
+  .masthead-name em { font-weight: 400; font-style: italic; color: var(--ash); letter-spacing: -0.02em; }
+  .masthead-rule-bottom { width: 100%; height: 1px; background: var(--ink); margin-bottom: var(--space-lg); }
+  .masthead-deck { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-2xl); padding-top: var(--space-lg); border-bottom: 1px solid var(--plains); padding-bottom: var(--space-xl); }
+  .masthead-desc { font-family: var(--font-body); font-size: 13px; font-weight: 400; color: var(--ash); line-height: 1.8; max-width: 440px; }
+  .masthead-kv { font-family: var(--font-mono); font-size: 10px; }
+  .masthead-kv-label { letter-spacing: 0.12em; text-transform: uppercase; color: var(--plains); margin-bottom: var(--space-xs); }
+  .masthead-kv-val { font-size: 11px; color: var(--ink); line-height: 1.6; }
+
+  /* ── SECTION HEADER ── */
+  .section-header { display: flex; align-items: baseline; gap: var(--space-lg); margin-bottom: var(--space-xl); padding-bottom: var(--space-md); border-bottom: 1px solid var(--ink); }
+  .section-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ash); min-width: 20px; }
+  .section-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; flex: 1; }
+  .section-source { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--plains); font-style: italic; }
+
+  /* ── TABS ── */
+  .tab-nav { display: flex; gap: 0; margin-bottom: var(--space-2xl); border-bottom: 1px solid var(--ink); }
+  .tab-btn { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 18px; background: transparent; border: none; color: var(--ash); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .15s; }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active { color: var(--ink); border-bottom-color: var(--violet); font-weight: 500; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── TAGS ── */
+  .tag-row { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-xl); }
+  .tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 0; border: 1px solid; }
+  .tag-ink       { color: var(--ink);        border-color: var(--ink); }
+  .tag-violet    { color: var(--violet);     border-color: var(--violet); }
+  .tag-aegean    { color: var(--aegean);     border-color: var(--aegean); }
+  .tag-steel     { color: var(--steel);      border-color: var(--steel); }
+  .tag-plains    { color: var(--plains);     border-color: var(--plains); }
+  .tag-periwinkle{ color: var(--periwinkle); border-color: var(--periwinkle); }
+
+  /* ── STAT ROW ── */
+  .stat-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; margin-bottom: var(--space-xl); background: var(--ink); border: 1px solid var(--ink); }
+  .stat-cell { padding: var(--space-xl) var(--space-lg); background: var(--chalk); position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .stat-index { position: absolute; top: 0; left: 0; width: 2px; height: 100%; }
+  .stat-value { font-family: var(--font-mono); font-size: 36px; font-weight: 300; color: var(--ink); letter-spacing: -0.03em; line-height: 1; margin-bottom: var(--space-xs); }
+  .stat-unit { font-family: var(--font-mono); font-size: 14px; font-weight: 300; color: var(--ash); }
+  .stat-label { font-family: var(--font-body); font-size: 11px; font-weight: 400; color: var(--ash); line-height: 1.45; margin-top: var(--space-sm); max-width: 160px; }
+  .stat-delta { font-family: var(--font-mono); font-size: 10px; margin-top: var(--space-md); letter-spacing: 0.02em; }
+  .delta-pos { color: var(--aegean); }
+  .delta-neg { color: var(--violet); }
+  .delta-flat { color: var(--ash); }
+
+  /* ── PULLQUOTE (v12: large mark + linen bg, no left border) ── */
+  .pullquote { padding: var(--space-2xl) var(--space-xl); background: var(--linen); border: 1px solid var(--ink); margin-bottom: var(--space-xl); display: grid; grid-template-columns: auto 1fr; gap: var(--space-xl); align-items: start; }
+  .pullquote-mark { font-family: var(--font-display); font-size: 96px; font-weight: 700; line-height: 0.7; color: var(--plains); margin-top: 8px; flex-shrink: 0; user-select: none; }
+  .pullquote p { font-family: var(--font-serif); font-size: 20px; font-style: italic; line-height: 1.55; color: var(--slate); }
+  .pullquote cite { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--plains); margin-top: var(--space-lg); font-style: normal; }
+
+  /* ── GREAT IDEA (v12 CCA quote panel) ── */
+  .great-idea { border-top: 3px solid var(--ink); border-bottom: var(--border-thin); padding: var(--space-xl) 0; margin-bottom: var(--space-xl); display: grid; grid-template-columns: 3fr 2fr; gap: var(--space-2xl); align-items: start; }
+  .great-idea-quote { font-family: var(--font-display); font-size: 26px; font-style: italic; font-weight: 400; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
+  .great-idea-source { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--plains); margin-bottom: var(--space-sm); }
+  .great-idea-context { font-family: var(--font-body); font-size: 12px; font-weight: 400; color: var(--ash); line-height: 1.7; }
+
+  /* ── ALERTS ── */
+  .alert { display: flex; gap: var(--space-md); padding: var(--space-md) var(--space-lg); margin-bottom: var(--space-md); align-items: flex-start; border-left: 3px solid; border-top: 1px solid var(--ink); border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  .alert-info    { background: rgba(107,124,141,0.06); border-left-color: var(--steel); }
+  .alert-warn    { background: rgba(83,84,112,0.06);   border-left-color: var(--violet); }
+  .alert-success { background: rgba(42,74,94,0.06);    border-left-color: var(--aegean); }
+  .alert-icon { font-family: var(--font-mono); font-size: 11px; font-weight: 500; padding-top: 1px; flex-shrink: 0; }
+  .alert-info .alert-icon    { color: var(--steel); }
+  .alert-warn .alert-icon    { color: var(--violet); }
+  .alert-success .alert-icon { color: var(--aegean); }
+  .alert-text { font-size: 13px; font-weight: 400; color: var(--slate); line-height: 1.5; }
+
+  /* ── CHART FRAME (v12: white bg, ruled axis only) ── */
+  .chart-frame { margin-bottom: var(--space-xl); padding-bottom: var(--space-lg); border-bottom: var(--border-thin); }
+  .chart-header { display: grid; grid-template-columns: 1fr auto; align-items: flex-start; margin-bottom: var(--space-xl); padding-bottom: var(--space-md); border-bottom: var(--border-thin); }
+  .chart-title { font-family: var(--font-display); font-size: 16px; font-weight: 400; letter-spacing: -0.01em; color: var(--ink); }
+  .chart-subtitle { font-family: var(--font-mono); font-size: 10px; font-weight: 300; color: var(--ash); letter-spacing: 0.04em; margin-top: 4px; }
+  .chart-legend { display: flex; gap: var(--space-lg); align-items: center; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10px; color: var(--ash); letter-spacing: 0.04em; }
+  .legend-mark { width: 16px; height: 2px; flex-shrink: 0; }
+
+  /* Horizontal bar chart */
+  .bar-section { margin-bottom: var(--space-xl); }
+  .bar-row { display: flex; align-items: center; gap: var(--space-md); margin-bottom: 10px; }
+  .bar-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ash); width: 110px; flex-shrink: 0; text-align: right; }
+  .bar-track { flex: 1; height: 22px; background: rgba(184,168,130,0.15); overflow: hidden; }
+  .bar-fill { height: 100%; transition: width 1s cubic-bezier(.16,1,.3,1); display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; }
+  .bar-val { font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: var(--chalk); white-space: nowrap; }
+  .bar-val-outside { font-family: var(--font-mono); font-size: 10px; color: var(--ash); margin-left: var(--space-sm); width: 80px; flex-shrink: 0; }
+
+  /* ── DATA TABLE (v12) ── */
+  .table-wrap { margin-bottom: var(--space-xl); overflow-x: auto; }
+  .table-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-lg); border-bottom: 1px solid var(--ink); padding-bottom: var(--space-md); }
+  .table-title { font-family: var(--font-display); font-size: 16px; font-weight: 400; color: var(--ink); }
+  .table-source { font-family: var(--font-mono); font-size: 9px; color: var(--plains); letter-spacing: 0.1em; text-transform: uppercase; }
+  .data-table { width: 100%; border-collapse: collapse; }
+  .data-table thead tr { border-bottom: var(--border-thin); }
+  .data-table th { font-family: var(--font-mono); font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); padding: var(--space-sm) var(--space-md) var(--space-md) 0; text-align: left; white-space: nowrap; }
+  .data-table th:last-child, .data-table td:last-child { text-align: right; padding-right: 0; padding-left: var(--space-md); }
+  .data-table tbody tr { border-bottom: var(--border-thin); transition: background .1s; }
+  .data-table tbody tr:hover { background: rgba(184,168,130,0.08); }
+  .data-table td { padding: 11px var(--space-md) 11px 0; font-size: 13px; color: var(--ink); vertical-align: top; }
+  .data-table td.mono { font-family: var(--font-mono); font-size: 12px; font-weight: 300; color: var(--slate); }
+  .data-table td.label-col { font-weight: 500; }
+  .data-table td.total-col { font-family: var(--font-mono); font-size: 13px; font-weight: 500; text-align: right; }
+
+  /* ── BADGE ── */
+  .badge { display: inline-block; font-family: var(--font-mono); font-size: 9px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border-radius: 1px; }
+  .badge-green  { background: rgba(42,74,94,0.1);   color: var(--aegean); }
+  .badge-amber  { background: rgba(83,84,112,0.1);  color: var(--violet); }
+  .badge-grey   { background: rgba(110,111,105,0.1); color: var(--ash); }
+  .badge-steel  { background: rgba(107,124,141,0.1); color: var(--steel); }
+
+  /* ── CARDS (v12: border-top rule, no radius, square) ── */
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-xl); }
+  .card { border: 1px solid var(--ink); border-top: 2px solid var(--ink); padding: var(--space-lg); background: var(--chalk); }
+  .card.ink-top    { border-top: 2px solid var(--ink); }
+  .card.aegean-top { border-top: 2px solid var(--ink); }
+  .card.violet-top { border-top: 2px solid var(--ink); }
+  .card-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); margin-bottom: var(--space-sm); }
+  .card-title { font-family: var(--font-display); font-size: 16px; font-weight: 400; letter-spacing: -0.01em; color: var(--ink); margin-bottom: var(--space-sm); line-height: 1.3; }
+  .card-body { font-size: 13px; font-weight: 400; color: var(--ash); line-height: 1.6; }
+
+  /* ── METHOD BOX ── */
+  .method-box { background: var(--linen); border: 1px solid var(--ink); border-left: 3px solid var(--ink); padding: var(--space-xl); margin-bottom: var(--space-xl); }
+  .method-box-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: var(--space-md); }
+  .method-box p { font-size: 13px; font-weight: 400; color: var(--slate); line-height: 1.7; margin-bottom: var(--space-md); }
+  .method-box p:last-child { margin-bottom: 0; }
+
+  /* ── FINDINGS ── */
+  .finding { border-bottom: var(--border-thin); padding: var(--space-lg) 0; display: grid; grid-template-columns: 48px 1fr; gap: var(--space-lg); align-items: start; }
+  .finding:last-child { border-bottom: none; }
+  .finding-num { font-family: var(--font-mono); font-size: 28px; font-weight: 300; color: var(--plains); line-height: 1; padding-top: 4px; }
+  .finding-title { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: var(--space-sm); }
+  .finding-body { font-size: 13px; font-weight: 400; color: var(--ash); line-height: 1.7; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: var(--space-2xl); margin-bottom: var(--space-xl); }
+  .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 1px; background: var(--plains); }
+  .timeline-era { position: relative; margin-bottom: var(--space-2xl); }
+  .timeline-dot { position: absolute; left: calc(-1 * var(--space-2xl) + 8px); top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--violet); border: 2px solid var(--chalk); }
+  .timeline-year { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet); margin-bottom: var(--space-sm); }
+  .timeline-title { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: var(--space-sm); }
+  .timeline-body { font-size: 13px; font-weight: 400; color: var(--ash); line-height: 1.7; }
+
+  /* ── NEM TABLE ROWS ── */
+  .nem-row { display: grid; grid-template-columns: 170px 1fr 130px 130px; gap: var(--space-md); padding: var(--space-md) 0; border-bottom: var(--border-thin); align-items: start; }
+  .nem-row:first-child { border-top: 1px solid var(--ash); }
+  .nem-source { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--steel); font-weight: 500; line-height: 1.4; }
+  .nem-finding { font-size: 12px; font-weight: 400; color: var(--slate); line-height: 1.6; }
+  .nem-mag { font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+  .nem-note { font-size: 11px; font-weight: 400; color: var(--ash); font-style: italic; line-height: 1.4; }
+
+  /* ── STACKED AREA CHARTS ── */
+  .tech-chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-xl); }
+  .tech-chart-wrap { border-top: 1px solid var(--ink); padding-top: var(--space-lg); }
+  .tech-chart-header { display: grid; grid-template-columns: 1fr auto; align-items: start; margin-bottom: var(--space-lg); padding-bottom: var(--space-md); border-bottom: var(--border-thin); }
+  .tech-chart-name { font-family: var(--font-display); font-size: 16px; font-weight: 400; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+  .tech-chart-sub { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ash); margin-top: 3px; }
+  .tech-chart-total { font-family: var(--font-mono); font-size: 13px; font-weight: 300; color: var(--slate); text-align: right; }
+  .tech-chart-total span { display: block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ash); margin-bottom: 2px; }
+  canvas.area-chart { display: block; width: 100%; height: 200px; }
+  .area-chart-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: var(--space-md); }
+  .area-legend-item { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em; color: var(--ash); }
+  .area-legend-swatch { width: 12px; height: 2px; flex-shrink: 0; }
+  .chart-annotations { font-family: var(--font-mono); font-size: 9px; color: var(--ash); display: flex; justify-content: space-between; margin-top: 4px; padding: 0 2px; }
+
+  /* filter buttons */
+  .chart-filters { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-xl); }
+  .filter-btn { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; background: transparent; border: 1px solid var(--plains); color: var(--ash); cursor: pointer; transition: all .15s; border-radius: 0; }
+  .filter-btn:hover { color: var(--ink); border-color: var(--ink); }
+  .filter-btn.active { background: var(--ink); color: var(--chalk); border-color: var(--ink); }
+
+  /* tooltip */
+  #chart-tooltip { position: fixed; background: var(--ink); color: var(--chalk); font-family: var(--font-mono); font-size: 11px; line-height: 1.6; padding: 10px 14px; pointer-events: none; z-index: 9999; display: none; white-space: nowrap; }
+
+  /* IBM stripe accent */
+  .stripe-accent { display: flex; flex-direction: column; gap: 3px; margin-bottom: var(--space-xl); }
+  .stripe-accent-line { height: 2px; width: 100%; }
+
+  /* ── RULES ── */
+  .rule { border: none; border-top: var(--border-thin); margin: var(--space-xl) 0; }
+  .rule-heavy { border: none; border-top: 1px solid var(--ink); margin: var(--space-xl) 0; }
+
+  /* ── TECH DOT ── */
+  .tech-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+
+  /* ── FOOTER (v12: 3px rule, 3-column) ── */
+  .footer { margin-top: var(--space-3xl); border-top: 3px solid var(--ink); padding-top: var(--space-lg); display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-xl); align-items: start; }
+  .footer-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); }
+  .footer-name em { font-weight: 400; font-style: italic; }
+  .footer-meta { font-family: var(--font-mono); font-size: 10px; color: var(--ash); letter-spacing: 0.08em; line-height: 1.8; }
+
+  /* ── SCENARIO TOGGLE ── */
+  .scenario-controls { display:flex; gap:var(--space-sm); margin-bottom:var(--space-lg); flex-wrap:wrap; align-items:center; }
+  .scenario-label { font-family:var(--font-mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ash); margin-right:var(--space-xs); }
+  .scenario-btn { font-family:var(--font-mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; padding:5px 12px; background:transparent; border:1px solid var(--plains); color:var(--ash); cursor:pointer; transition:all .15s; }
+  .scenario-btn:hover { color:var(--ink); border-color:var(--ink); }
+  .scenario-btn.active { background:var(--ink); color:var(--chalk); border-color:var(--ink); }
+  /* Paired scenario bar rows */
+  .bar-pair { margin-bottom:var(--space-lg); }
+  .bar-pair-rows { display:flex; flex-direction:column; gap:4px; }
+  /* IRA projection section removed — retrospective report only */
+  /* EIA comparison table */
+  .comparison-tag { display:inline-block; font-family:var(--font-mono); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; padding:2px 6px; margin-left:6px; border:1px solid; }
+  .tag-eia { color:var(--steel); border-color:var(--steel); }
+  .tag-cmm { color:var(--violet); border-color:var(--violet); }
+  /* Scale toggle */
+  .scale-toggle { display:flex; gap:0; margin-bottom:var(--space-lg); border:1px solid var(--ink); width:fit-content; }
+  .scale-btn { font-family:var(--font-mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; padding:6px 14px; background:transparent; border:none; color:var(--ash); cursor:pointer; transition:all .15s; }
+  .scale-btn.active { background:var(--ink); color:var(--chalk); }
+  .scale-btn:not(.active):hover { color:var(--ink); }
+
+  @media(max-width:780px) {
+    .masthead-name { font-size: 44px; }
+    .masthead-deck { grid-template-columns: 1fr; }
+    .stat-row { grid-template-columns: repeat(2,1fr); }
+    .tech-chart-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr; }
+    .great-idea { grid-template-columns: 1fr; }
+    .footer { grid-template-columns: 1fr; }
+    .pullquote { grid-template-columns: auto 1fr; }
+    .nem-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead-rule-top"></div>
+  <header class="masthead">
+    <div class="masthead-flag">
+      <div class="masthead-wordmark">Carbon Middle Management: Research Report</div>
+      <div class="masthead-version">March 2025</div>
+    </div>
+    <div class="masthead-name">U.S. Energy<br><em>Public Funding</em></div>
+    <div class="masthead-rule-bottom"></div>
+    <div class="masthead-deck">
+      <div class="masthead-desc">Fifty-year retrospective comparison of public funding, tax expenditures, and state policy support across nuclear, solar, wind, CCS, battery storage, and geothermal (1975–2025). Includes net metering cross-funding transfers and state incentive coverage. Forward-looking projections are excluded; all values reflect enacted legislation, actual expenditures, or estimates anchored to government data.</div>
+      <div class="masthead-kv">
+        <div class="masthead-kv-label">Coverage Period</div>
+        <div class="masthead-kv-val">1975–2025<br>50 fiscal years<br>Real 2024 USD</div>
+      </div>
+      <div class="masthead-kv">
+        <div class="masthead-kv-label">Technologies</div>
+        <div class="masthead-kv-val">Nuclear · Solar<br>Wind · CCS<br>Battery · Geothermal</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- IBM stripe accent -->
+  <div class="stripe-accent">
+    <div class="stripe-accent-line" style="background:var(--ink);opacity:1"></div>
+    <div class="stripe-accent-line" style="background:var(--ink);opacity:0.4"></div>
+    <div class="stripe-accent-line" style="background:var(--ink);opacity:0.15"></div>
+  </div>
+
+  <nav class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
+    <button class="tab-btn" onclick="showTab('charts',this)">Charts</button>
+    <button class="tab-btn" onclick="showTab('scorecard',this)">Scorecard</button>
+    <button class="tab-btn" onclick="showTab('state',this)">State Incentives</button>
+    <button class="tab-btn" onclick="showTab('nem',this)">Net Metering</button>
+    <button class="tab-btn" onclick="showTab('timeline',this)">Timeline</button>
+    <button class="tab-btn" onclick="showTab('findings',this)">Findings</button>
+    <button class="tab-btn" onclick="showTab('methodology',this)">Methodology</button>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- OVERVIEW -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-overview" class="tab-panel active">
+
+    <!-- Horizontal bar chart with scenario toggle -->
+    <div class="chart-frame">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">Cumulative Public Funding by Technology, 1975–2025</div>
+          <div class="chart-subtitle">Real 2024 USD · Toggle scenarios to see how rankings change</div>
+        </div>
+      </div>
+
+      <div class="scenario-controls">
+        <span class="scenario-label">NEM:</span>
+        <button class="scenario-btn active" onclick="setScenario('nem','include',this)">Include NEM</button>
+        <button class="scenario-btn" onclick="setScenario('nem','exclude',this)">Exclude NEM</button>
+        <span class="scenario-label" style="margin-left:var(--space-md)">Price-Anderson:</span>
+        <button class="scenario-btn active" onclick="setScenario('pa','exclude',this)">Exclude P-A</button>
+        <button class="scenario-btn" onclick="setScenario('pa','include',this)">Include P-A ($25–75B est.)</button>
+        <!-- OBBBA cliff toggle removed: this report is retrospective only -->
+      </div>
+
+      <div class="bar-section" id="scenarioBars">
+        <!-- rendered by JS -->
+      </div>
+
+      <div style="font-family:var(--font-mono);font-size:9px;color:var(--ash);line-height:1.8;margin-top:var(--space-md);padding-top:var(--space-md);border-top:var(--border-thin)">
+        NEM = net metering ratepayer cost transfer ($20–50B CMM estimate). P-A = Price-Anderson liability cap ($25–75B implicit value, highly uncertain). OBBBA (2025) imposed a 12/31/2027 placed-in-service deadline for new solar and wind federal credits; nuclear, battery, CCS, geothermal preserved. OBBBA also raised §45Q utilization/EOR credit to $85/tonne (from $60), creating parity with permanent storage.
+      </div>
+    </div>
+
+    <div class="alert alert-warn"><span class="alert-icon">!</span><span class="alert-text">Nuclear and solar rankings reverse depending on NEM and Price-Anderson assumptions. Neither answer is wrong: they reflect genuine disputes about what counts as public support. Use the toggles above to see each scenario.</span></div>
+    <div class="alert alert-info"><span class="alert-icon">i</span><span class="alert-text">OBBBA (2025) preserves nuclear, battery, CCS, and geothermal incentives past 2027. Solar and wind face a hard placed-in-service cliff of 12/31/2027. OBBBA also raised the §45Q utilization/EOR credit from $60 to $85/tonne, creating parity with geological storage — a major change that JCT estimates will cost an additional ~$14B over FY2025–2034. See the Timeline tab for details on each technology.</span></div>
+    <div class="alert alert-success"><span class="alert-icon">✓</span><span class="alert-text">IRA §45U creates the first nuclear deployment credit at parity with solar and wind: up to ~$11.6B/yr if all U.S. nuclear capacity qualifies at $15/MWh.</span></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- CHARTS BY TECHNOLOGY -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-charts" class="tab-panel">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">01</span>
+        <span class="section-title">Public Funding by Type Over Time: by Technology</span>
+        <span class="section-source">CRS · EIA · JCT · LBNL · CMM</span>
+      </div>
+
+      <p style="font-size:13px;color:var(--ash);line-height:1.7;margin-bottom:var(--space-lg)">Each chart shows estimated annual public funding flows in real 2024 USD, stacked by type. Values represent mid-range estimates from CRS R&D data, EIA public funding reports, JCT tax expenditures, LBNL RPS compliance data, and CMM synthesis. Hover for year-by-year breakdown.</p>
+
+      <div class="chart-filters">
+        <button class="filter-btn active" onclick="setFilter('all',this)">All Types</button>
+        <button class="filter-btn" onclick="setFilter('rd',this)">R&amp;D Only</button>
+        <button class="filter-btn" onclick="setFilter('tax',this)">Tax Credits</button>
+        <button class="filter-btn" onclick="setFilter('state',this)">State Policy</button>
+        <span style="flex:1"></span>
+        <div class="scale-toggle">
+          <button class="scale-btn active" onclick="setScale('shared',this)">Shared Y-Axis</button>
+          <button class="scale-btn" onclick="setScale('individual',this)">Individual Y-Axis</button>
+        </div>
+      </div>
+      <p style="font-size:11px;color:var(--ash);line-height:1.6;margin-bottom:var(--space-lg);font-family:var(--font-mono)">Hover over chart stream labels in the legend to see the primary source document. Shared y-axis enables cross-technology comparison; individual y-axis reveals internal composition of each technology's funding mix.</p>
+
+      <div class="tech-chart-grid" id="chartGrid">
+        <div class="tech-chart-wrap">
+          <div class="tech-chart-header">
+            <div><div class="tech-chart-name">Nuclear</div><div class="tech-chart-sub">Annual flow · Real 2024 USD</div></div>
+            <div class="tech-chart-total"><span>50-yr total (mid)</span>~$178B</div>
+          </div>
+          <canvas id="chart-nuclear" class="area-chart" width="500" height="200"></canvas>
+          <div class="area-chart-legend" id="leg-nuclear"></div>
+        </div>
+        <div class="tech-chart-wrap">
+          <div class="tech-chart-header">
+            <div><div class="tech-chart-name">Solar</div><div class="tech-chart-sub">Annual flow · Real 2024 USD</div></div>
+            <div class="tech-chart-total"><span>50-yr total (mid, incl. NEM)</span>~$238B</div>
+          </div>
+          <canvas id="chart-solar" class="area-chart" width="500" height="200"></canvas>
+          <div class="area-chart-legend" id="leg-solar"></div>
+        </div>
+        <div class="tech-chart-wrap">
+          <div class="tech-chart-header">
+            <div><div class="tech-chart-name">Wind</div><div class="tech-chart-sub">Annual flow · Real 2024 USD</div></div>
+            <div class="tech-chart-total"><span>50-yr total (mid)</span>~$132B</div>
+          </div>
+          <canvas id="chart-wind" class="area-chart" width="500" height="200"></canvas>
+          <div class="area-chart-legend" id="leg-wind"></div>
+        </div>
+        <div class="tech-chart-wrap">
+          <div class="tech-chart-header">
+            <div><div class="tech-chart-name">CCS</div><div class="tech-chart-sub">Annual flow · Real 2024 USD</div></div>
+            <div class="tech-chart-total"><span>50-yr total (mid)</span>~$29B</div>
+          </div>
+          <canvas id="chart-ccs" class="area-chart" width="500" height="200"></canvas>
+          <div class="area-chart-legend" id="leg-ccs"></div>
+        </div>
+        <div class="tech-chart-wrap">
+          <div class="tech-chart-header">
+            <div><div class="tech-chart-name">Battery Storage</div><div class="tech-chart-sub">Annual flow · Real 2024 USD</div></div>
+            <div class="tech-chart-total"><span>50-yr total (mid)</span>~$32B</div>
+          </div>
+          <canvas id="chart-battery" class="area-chart" width="500" height="200"></canvas>
+          <div class="area-chart-legend" id="leg-battery"></div>
+        </div>
+        <div class="tech-chart-wrap">
+          <div class="tech-chart-header">
+            <div><div class="tech-chart-name">Geothermal</div><div class="tech-chart-sub">Annual flow · Real 2024 USD</div></div>
+            <div class="tech-chart-total"><span>50-yr total (mid)</span>~$20B</div>
+          </div>
+          <canvas id="chart-geo" class="area-chart" width="500" height="200"></canvas>
+          <div class="area-chart-legend" id="leg-geo"></div>
+        </div>
+      </div>
+
+      <div class="method-box">
+        <div class="method-box-title">Chart Methodology Note</div>
+        <p>Annual flows estimated from: (1) CRS RS22858 decade-by-decade DOE R&D allocation; (2) EIA Federal Public Funding Reports FY2016/2019/2022; (3) JCT tax expenditure estimates for ITC, PTC, §45U, §45Q; (4) LBNL RPS Status Report compliance cost series; (5) CPUC/LBNL net metering cross-funding data. Pre-1990 values for solar, wind, and geothermal carry higher uncertainty. All values are approximate annual mid-estimates, illustrative of order-of-magnitude and trend.</p>
+        <p style="margin-top:8px">This report is retrospective: chart data ends at the last year with actual or enacted data for each stream. Tax credit streams generally end at 2022 (last year with JCT/EIA actuals); R&D appropriations extend through enacted FY2024–2025 budgets and include IIJA supplemental appropriations where applicable (wind, solar, geothermal FY2022+). CCS R&D values represent estimated CCS-specific subset of the broader FECM budget. CCS State/RGGI and Battery NEM+Storage streams removed from prior versions (insufficient sourcing).</p>
+      </div>
+
+      <div style="font-family:var(--font-mono);font-size:10px;color:var(--ash);line-height:1.8;margin-top:var(--space-sm);padding:12px;background:var(--chalk);border-radius:4px">
+        <strong style="font-family:var(--font-display);font-size:12px;color:var(--ink)">Data Confidence Key</strong><br>
+        <span style="display:inline-block;width:30px;height:2px;background:var(--ink);vertical-align:middle;margin-right:6px"></span> <strong>Solid</strong> = Government source data (DOE appropriations, JCT tax expenditure reports, Treasury disbursements)<br>
+        <span style="display:inline-block;width:30px;height:0;border-top:2px dashed var(--ink);vertical-align:middle;margin-right:6px"></span> <strong>Dashed</strong> = Anchored estimate (identified sources with interpolation between anchor points; e.g., RPS compliance, ZECs, CCS R&D subset)<br>
+        <span style="display:inline-block;width:30px;height:0;border-top:2px dotted var(--ink);vertical-align:middle;margin-right:6px"></span> <strong>Dotted</strong> = Modeled / thin sourcing (net metering national extrapolation, state ITCs, offshore mandates, geothermal tax credits/grants)
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- MASTER SCORECARD -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-scorecard" class="tab-panel">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">02</span>
+        <span class="section-title">Master Scorecard: All Public Funding Vectors</span>
+        <span class="section-source">Cumulative real 2024 USD</span>
+      </div>
+      <p style="font-size:13px;color:var(--ash);margin-bottom:var(--space-md);line-height:1.7">Net metering is a ratepayer cost transfer: not a government expenditure: excluded from EIA federal inventories. Included here as a state policy instrument with measurable distributional effects.</p>
+      <div class="alert alert-info" style="margin-bottom:var(--space-xl)"><span class="alert-icon">i</span><span class="alert-text"><strong>Spent vs. designated.</strong> This scorecard combines economically distinct categories: <strong>direct expenditures</strong> (R&D appropriations actually disbursed), <strong>foregone tax revenue</strong> (credits claimed against tax liability — based on JCT tax expenditure estimates and EIA data), <strong>ratepayer cost transfers</strong> (RPS compliance, NEM, ZECs — paid through electricity bills, not government budgets), and <strong>contingent liabilities</strong> (loan guarantees — federal exposure that may never result in actual cost). Face values are used for loan guarantees for comparability, though the true federal cost is the credit subsidy cost (typically 5–15% of face value). See Methodology tab for definitions of each funding type.</span></div>
+      <div class="table-wrap">
+        <div class="table-header">
+          <div class="table-title">All Technologies · All Vectors</div>
+          <div class="table-source">Ranges reflect methodological uncertainty</div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th style="width:110px">Technology</th><th>R&amp;D</th><th>Tax Credits</th><th>Grants/DOE</th><th>Loan Guar.</th><th>RPS/State</th><th>Net Metering †</th><th>ZECs/Mandates</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td class="label-col"><span class="tech-dot" style="background:var(--chart-2);margin-right:6px"></span>Nuclear</td><td class="mono">$85–95B</td><td class="mono">$2–3B</td><td class="mono">$10–15B</td><td class="mono">$8–12B</td><td class="mono">$15–25B</td><td class="mono" style="color:var(--plains)">N/A</td><td class="mono">$10–18B</td><td class="total-col">~$158–205B</td></tr>
+            <tr><td class="label-col"><span class="tech-dot" style="background:var(--chart-3);margin-right:6px"></span>Solar</td><td class="mono">$12–18B</td><td class="mono">$85–110B</td><td class="mono">$15–25B</td><td class="mono">$3–6B</td><td class="mono">$45–70B</td><td class="mono" style="color:var(--steel);font-weight:500">$30–65B</td><td class="mono">$5–10B</td><td class="total-col">~$195–310B</td></tr>
+            <tr><td class="label-col"><span class="tech-dot" style="background:var(--chart-5);margin-right:6px"></span>Wind</td><td class="mono">$8–14B</td><td class="mono">$50–70B</td><td class="mono">$5–10B</td><td class="mono">$2–4B</td><td class="mono">$35–55B</td><td class="mono">$1–3B</td><td class="mono">$2–4B</td><td class="total-col">~$103–160B</td></tr>
+            <tr><td class="label-col"><span class="tech-dot" style="background:var(--chart-4);margin-right:6px"></span>CCS</td><td class="mono">$10–18B</td><td class="mono">$3–8B</td><td class="mono">$3–6B</td><td class="mono">$1–3B</td><td class="mono" style="color:var(--ash);font-size:10px">Not quantified ‡</td><td class="mono" style="color:var(--plains)">N/A</td><td class="mono">$1–3B</td><td class="total-col">~$18–38B</td></tr>
+            <tr><td class="label-col"><span class="tech-dot" style="background:var(--chart-1);margin-right:6px"></span>Battery</td><td class="mono">$3–6B</td><td class="mono">$8–15B</td><td class="mono">$4–8B</td><td class="mono">$0.5–2B</td><td class="mono">$2–5B</td><td class="mono" style="color:var(--plains)">N/A</td><td class="mono">$2–5B</td><td class="total-col">~$19–41B</td></tr>
+            <tr><td class="label-col"><span class="tech-dot" style="background:var(--chart-6);margin-right:6px"></span>Geothermal</td><td class="mono">$4–6B</td><td class="mono">$4–8B</td><td class="mono">$1–2B</td><td class="mono">&lt;$0.5B</td><td class="mono">$3–6B</td><td class="mono" style="color:var(--plains)">N/A</td><td class="mono">$1–3B</td><td class="total-col">~$13–26B</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:10px;color:var(--ash);line-height:1.6">† Net metering: retail-rate cost transfer from non-solar to solar ratepayers. Not a government expenditure. CMM estimate: $30–65B national cumulative 1995–2025. CA CPUC data ($3.4B/yr in 2021, $8.5B/yr in 2024) provides the largest state anchor; CA represents roughly 40–50% of U.S. distributed solar capacity. National extrapolation carries high uncertainty. See Net Metering tab.</p>
+      <p style="font-family:var(--font-mono);font-size:10px;color:var(--ash);line-height:1.6">‡ CCS state support: WY, IL, ND, TX, LA have enacted CCS-adjacent grants, severance tax exemptions for CO₂-EOR, and storage liability frameworks. RGGI and CA Cap-and-Trade create indirect carbon pricing adjacency. No defensible aggregate annual series exists; prior versions of this dashboard included a modeled $0.5–2B estimate that has been removed pending better sourcing.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- STATE INCENTIVES -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-state" class="tab-panel">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">03</span>
+        <span class="section-title">Complete State Incentives: All Six Technologies</span>
+        <span class="section-source">LBNL · CPUC · State Agencies</span>
+      </div>
+      <p style="font-size:13px;color:var(--ash);margin-bottom:var(--space-xl);line-height:1.7">RPS compliance costs alone total an estimated $80–130B over 2001–2025, yet most federal public funding inventories stop at the state border.</p>
+
+      <!-- Nuclear -->
+      <div style="margin-bottom:var(--space-xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:8px;border-bottom:var(--border-mid)">
+          <span class="tech-dot" style="background:var(--chart-2);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:17px;font-weight:600">Nuclear</span>
+          <span class="badge badge-grey">$25–45B state total</span>
+        </div>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Type</th><th>Programs &amp; States</th><th>Est. Cumulative</th><th>Status</th></tr></thead><tbody>
+          <tr><td class="label-col">Zero Emission Credits</td><td style="font-size:12px;color:var(--ash)">NY ($462M/yr, ~$5.5B since 2017), IL ($235M/yr), NJ (~$300M/yr), CT (~$200M/yr), OH ($150M/yr 2019–22, rescinded). Palisades restart: ~$300M MI state + federal DOE loan guarantee support (~$1.5B).</td><td class="mono">$10–18B</td><td><span class="badge badge-green">Active</span></td></tr>
+          <tr><td class="label-col">Clean Energy Standards</td><td style="font-size:12px;color:var(--ash)">NY CES through 2030, IL CEJA, NJ ZEC extended. Above-market zero-carbon electricity procurement.</td><td class="mono">Incl. in ZEC</td><td><span class="badge badge-green">Active</span></td></tr>
+          <tr><td class="label-col">State R&amp;D / NYPA</td><td style="font-size:12px;color:var(--ash)">NYPA operating support, NY Green Bank adjacency, state university nuclear engineering programs</td><td class="mono">$2–4B</td><td><span class="badge badge-green">Ongoing</span></td></tr>
+        </tbody></table></div>
+      </div>
+
+      <!-- Solar -->
+      <div style="margin-bottom:var(--space-xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:8px;border-bottom:var(--border-mid)">
+          <span class="tech-dot" style="background:var(--chart-3);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:17px;font-weight:600">Solar</span>
+          <span class="badge badge-green">$70–130B state total (incl. NEM)</span>
+        </div>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Type</th><th>Programs &amp; States</th><th>Est. Cumulative</th><th>Status</th></tr></thead><tbody>
+          <tr><td class="label-col">RPS Compliance Costs</td><td style="font-size:12px;color:var(--ash)">Solar SREC carve-outs in MA, NJ, DC, MD, CT at $200–450/MWh peak. LBNL: $4.7B/yr national RPS compliance by 2018.</td><td class="mono">$45–70B</td><td><span class="badge badge-green">Ongoing</span></td></tr>
+          <tr><td class="label-col" style="color:var(--steel)">Net Metering †</td><td style="font-size:12px;color:var(--ash)">CA: $3.4B/yr (2021) → $8.5B/yr (2024). NEM 3.0 cut CA compensation 75% (April 2023). LBNL/Brattle: +1.1¢/kWh per 5pp NEM penetration.</td><td class="mono" style="color:var(--steel);font-weight:500">$30–65B</td><td><span class="badge badge-amber">Contested</span></td></tr>
+          <tr><td class="label-col">State ITCs &amp; Rebates</td><td style="font-size:12px;color:var(--ash)">NC 35% ITC (2007–15, $800M–1.2B). MA SMART ~$200M/yr. NY-Sun $1B+. CA CSI ~$2B total.</td><td class="mono">$5–10B</td><td><span class="badge badge-grey">Mostly sunset</span></td></tr>
+          <tr><td class="label-col">Community Solar</td><td style="font-size:12px;color:var(--ash)">IL, NY, MA, MN, NJ, CO above-wholesale compensation. NY NYSERDA $400M+ committed.</td><td class="mono">$2–5B</td><td><span class="badge badge-green">Expanding</span></td></tr>
+        </tbody></table></div>
+      </div>
+
+      <!-- Wind -->
+      <div style="margin-bottom:var(--space-xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:8px;border-bottom:var(--border-mid)">
+          <span class="tech-dot" style="background:var(--chart-5);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:17px;font-weight:600">Wind</span>
+          <span class="badge badge-steel">$38–63B state total</span>
+        </div>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Type</th><th>Programs &amp; States</th><th>Est. Cumulative</th><th>Status</th></tr></thead><tbody>
+          <tr><td class="label-col">RPS Compliance</td><td style="font-size:12px;color:var(--ash)">Wind captured ~60–70% of early RPS procurement 2000–2015. TX CREZ transmission build-out: ~$7B ratepayer-funded for wind.</td><td class="mono">$35–55B</td><td><span class="badge badge-green">Ongoing</span></td></tr>
+          <tr><td class="label-col">Offshore Mandates</td><td style="font-size:12px;color:var(--ash)">NY 9 GW, NJ 7.5 GW, MA 3.2 GW. OREC premiums $30–80/MWh over market. Early stage, accelerating.</td><td class="mono">$3–8B</td><td><span class="badge badge-green">Growing</span></td></tr>
+        </tbody></table></div>
+        <p style="font-family:var(--font-mono);font-size:9px;color:var(--ash);margin-top:8px">Note: State and local property tax abatements (TX Ch. 312, IA exemptions, MN/KS/OK wind exemptions) are not included in these totals. See Methodology tab for discussion of the abatement data gap.</p>
+      </div>
+
+      <!-- CCS / Battery / Geo cards -->
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-tag">CCS · ~$2–6B state total (not charted)</div>
+          <div class="card-title">Carbon Capture State Incentives</div>
+          <div class="card-body">WY, IL, ND, TX, LA grants (~$1.5B total). Severance tax exemptions for CO₂-EOR. State carbon storage legislation (liability frameworks) lowers project costs. RGGI/CA Cap-and-Trade: CCS-eligible but no defensible annual series exists. These values are not included in the CCS chart due to thin sourcing.</div>
+        </div>
+        <div class="card aegean-top">
+          <div class="card-tag">Battery Storage · ~$5–13B state total</div>
+          <div class="card-title">Storage State Incentives</div>
+          <div class="card-body">CA AB 2514+ procurement mandates. CA SGIP: $1.5B+ since 2001, peak $300M/yr. NY (6 GW by 2030), MA, NJ mandates. NEM 3.0 specifically designed to incentivize battery adoption.</div>
+        </div>
+        <div class="card violet-top">
+          <div class="card-tag">Geothermal · ~$4–10B state total</div>
+          <div class="card-title">Geothermal State Incentives</div>
+          <div class="card-body">MD post-2022 RPS carve-out at $94.47/MWh. NV, AZ, UT, CA RPS provisions. NV property tax exemption. UT, AZ, ID tax credits. NV Office of Energy exploration grants.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- NET METERING -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-nem" class="tab-panel">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">04</span>
+        <span class="section-title">Net Metering: Evidence &amp; Methodology</span>
+        <span class="section-source">LBNL · CPUC · Brattle · CMM</span>
+      </div>
+
+      <div class="pullquote">
+        <div class="pullquote-mark">"</div>
+        <div>
+          <p>Net metering and Price-Anderson are structurally similar: both shift costs from technology adopters to third parties, both are excluded from standard federal public funding inventories, and both can flip technology rankings when included.</p>
+          <cite>CMM Research Note · 2025</cite>
+        </div>
+      </div>
+
+      <div class="method-box">
+        <div class="method-box-title">What Is Net Metering as a Public Funding Mechanism?</div>
+        <p>NEM allows solar owners to receive credits for excess electricity at or near the full retail rate (~$0.25–0.35/kWh). The public funding value is the gap between that credit and the actual wholesale avoided cost (~$0.05–0.08/kWh), recovered from non-solar ratepayers through utility rate design. This transfer does not appear in government budgets: which is why EIA excludes it from its federal public funding inventories.</p>
+        <p><strong>Contested:</strong> Solar advocates argue value-of-solar analyses (grid deferral, avoided T&D, carbon avoidance) often equal or exceed the retail rate credit. Critics note the cost shift is regressive: it benefits wealthier solar adopters at the expense of renters and lower-income ratepayers.</p>
+      </div>
+
+      <div class="table-wrap">
+        <div class="table-header">
+          <div class="table-title">Study-by-Study Evidence Comparison</div>
+          <div class="table-source">Seven sources · 2013–2025</div>
+        </div>
+        <div style="display:grid;grid-template-columns:170px 1fr 130px 130px;gap:var(--space-md);padding-bottom:var(--space-md);border-bottom:1px solid var(--ash);margin-bottom:var(--space-sm)">
+          <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)">Source</span>
+          <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)">Finding</span>
+          <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)">Magnitude</span>
+          <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)">Notes</span>
+        </div>
+        <div class="nem-row"><div class="nem-source">LBNL (2017)</div><div class="nem-finding">At &lt;5% solar penetration, effects negligible. At 10%, NEM produces ±5% price impact under volumetric rates.</div><div class="nem-mag">±5% at 10% penetration</div><div class="nem-note">Most widely cited; industry-neutral</div></div>
+        <div class="nem-row"><div class="nem-source">LBNL / Brattle (2025)</div><div class="nem-finding">5pp increase in net-metered solar → +1.1¢/kWh nationally. CA NEM contributed up to 2¢/kWh.</div><div class="nem-mag">+1.1¢/kWh per 5pp NEM</div><div class="nem-note">Econometric; most recent</div></div>
+        <div class="nem-row"><div class="nem-source">CPUC Public Advocates (2024)</div><div class="nem-finding">CA cost shift grew from $3.4B/yr (2021) to $8.5B/yr (2024). ~21–27% of non-solar CA bill supports NEM.</div><div class="nem-mag">$8.5B/yr (CA, 2024)</div><div class="nem-note">Utility-side; excludes grid benefits</div></div>
+        <div class="nem-row"><div class="nem-source">Verdant (2021)</div><div class="nem-finding">CA NEM 2.0 unreformed → $13B increase over 20 years. Drove NEM 3.0 reform proceeding.</div><div class="nem-mag">$650M/yr avg (CA)</div><div class="nem-note">Pre-NEM 3.0</div></div>
+        <div class="nem-row"><div class="nem-source">NREL (2025)</div><div class="nem-finding">Rooftop solar causes &lt;$1/month impact per non-solar ratepayer nationally at current penetration.</div><div class="nem-mag">&lt;$1/month per HH</div><div class="nem-note">Per-household metric; low penetration</div></div>
+        <div class="nem-row"><div class="nem-source">CMM Estimate 1995–2025</div><div class="nem-finding">LBNL/Brattle penetration-price relationship applied to historical NEM deployment. CA ~40–50% of total.</div><div class="nem-mag" style="color:var(--violet);font-weight:600">$20–50B national</div><div class="nem-note">CMM synthesis</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- TIMELINE -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-timeline" class="tab-panel">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">05</span>
+        <span class="section-title">Policy History by Technology, 1975–2025</span>
+        <span class="section-source">Six technologies</span>
+      </div>
+
+      <!-- NUCLEAR -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--ink)">
+          <span class="tech-dot" style="background:var(--chart-2);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:19px;font-weight:600">Nuclear</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1954–1979: The Dominant Decade</div>
+            <div class="timeline-title">Federal monopoly on atomic energy</div>
+            <div class="timeline-body">Atomic Energy Act (1954) created the framework for commercial nuclear. Price-Anderson Act (1957) capped liability, transferring risk to the public. Nuclear absorbed 50–60% of all federal energy R&D. DOE nuclear R&D peaked at $8.6B/yr in FY1979. Pfund-Healey (2011): nuclear averaged $3.3B/yr in its first 15 years of public funding vs. $0.4B/yr for all renewables combined.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1979–2000: Freeze and Retrenchment</div>
+            <div class="timeline-title">Three Mile Island ends the expansion era</div>
+            <div class="timeline-body">TMI accident (1979) froze new construction. No new reactor orders placed after 1978 were completed. DOE nuclear R&D budgets fell sharply through the 1980s. Price-Anderson renewed 1988. The Nuclear Waste Policy Act (1982) created the repository framework, with costs borne by ratepayers via the Nuclear Waste Fund ($0.001/kWh). Near-zero state support throughout this period.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2000–2015: Nuclear Renaissance (Aborted)</div>
+            <div class="timeline-title">EPAct loan guarantees and new licensing</div>
+            <div class="timeline-body">EPAct 2005 created $18.5B in DOE loan guarantees for new nuclear, a new production tax credit ($0.018/kWh for 8 years, first 6,000 MW), and streamlined NRC licensing. NRC issued new combined licenses. Vogtle and Summer projects broke ground post-2008. Summer abandoned 2017. Vogtle Units 3&4 completed 2023/2024 at roughly 4x original budget.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2016–2022: State Zero-Emission Credits</div>
+            <div class="timeline-title">States rescue operating reactors</div>
+            <div class="timeline-body">ZEC programs emerged as economically stressed reactors faced premature closure. NY (2016, ~$462M/yr), IL (2017, ~$235M/yr), NJ (2019, ~$300M/yr), CT (2019, ~$200M/yr), OH (2019, rescinded 2023 post-scandal). Palisades (MI): restart supported by ~$300M in Michigan state funding plus a ~$1.5B DOE loan guarantee under Title XVII, the first federal loan guarantee for a nuclear restart. Cumulative ZEC and restart payments: $10–18B. These represented the first material state public funding for nuclear since the Atomic Energy Commission era.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot" style="background:var(--aegean)"></div>
+            <div class="timeline-year" style="color:var(--aegean)">2022–2025: IRA and OBBBA</div>
+            <div class="timeline-title">First federal deployment parity with solar and wind</div>
+            <div class="timeline-body">IRA (2022) §45U created a production credit of up to $15/MWh for existing nuclear (JCT: $13.1B over 2024–2028). First federal nuclear deployment credit comparable in structure to the solar ITC and wind PTC. OBBBA (2025) preserved nuclear incentives past the 2027 cliff that applies to solar and wind. Advanced nuclear also eligible for §48E investment credit and DOE loan guarantees under Title XVII.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOLAR -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--ink)">
+          <span class="tech-dot" style="background:var(--chart-3);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:19px;font-weight:600">Solar</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1975–1985: Early R&D and the First Credit</div>
+            <div class="timeline-title">Solar in the shadow of nuclear</div>
+            <div class="timeline-body">DOE solar R&D peaked at ~$0.5B/yr in FY1979 before Reagan-era cuts reduced it to under $0.1B/yr by 1988. Energy Tax Act (1978) created a 10% residential solar credit (expired 1985). Solar remained a rounding error in federal energy support. Cumulative federal solar support 1975–1985: under $3B.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1986–2005: Policy Vacuum</div>
+            <div class="timeline-title">Near-zero federal support; states fill partial gap</div>
+            <div class="timeline-body">PURPA (1978) provided some market access for solar. Iowa (1983) and Minnesota (1994) created the first state standards with renewable preferences. Net metering laws began appearing in the mid-1990s but penetration remained tiny. EPAct 2005 restored the solar ITC at 30% for commercial and 30% residential (capped at $2,000).</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2006–2013: ITC Activation and ARRA Surge</div>
+            <div class="timeline-title">The structural turning point</div>
+            <div class="timeline-body">8-year ITC extension (2008) and removal of the residential cap triggered the first major deployment surge. ARRA (2009) added cash grants in lieu of ITC ($1602 grants), DOE loan guarantees (Solyndra, SunPower, First Solar), and $1.5B+ in additional solar support. NC's 35% state ITC (2007–2015) deployed ~$800M–1.2B. State RPS SREC markets in NJ, MA, DC emerged with solar carve-outs at $200–450/MWh.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2014–2021: Scale and NEM Emergence</div>
+            <div class="timeline-title">Cost crossover and the cost-shift question</div>
+            <div class="timeline-body">Solar ITC extended repeatedly (2015, 2020). Module costs fell 90%+ since 2009. Annual ITC value grew from ~$2B (2012) to $7.5B (2022). NEM cross-funding transfers became material: CA cost shift grew to $3.4B/yr by 2021. CPUC Verdant (2021) projected $13B over 20 years if unreformed. NY-Sun, MA SMART, and community solar programs added $1–2B in state support.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot" style="background:var(--aegean)"></div>
+            <div class="timeline-year" style="color:var(--aegean)">2022–2025: IRA Peak and NEM Reform</div>
+            <div class="timeline-title">Maximum federal support; state retrenchment begins</div>
+            <div class="timeline-body">IRA (2022) reset ITC to 30%+ with adders (domestic content, energy community, low-income) potentially reaching 70%. JCT solar ITC: $27.5B in FY2024 alone. Treasury OTA (March 2024) projects $424.6B in ITC+PTC 2024–2033. CA NEM 3.0 (April 2023) cut solar export compensation 75%, materially reducing the cost shift going forward. OBBBA (2025) created a hard 12/31/2027 placed-in-service cliff for new solar.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WIND -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--ink)">
+          <span class="tech-dot" style="background:var(--chart-5);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:19px;font-weight:600">Wind</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1975–1991: R&D and California Demonstration</div>
+            <div class="timeline-title">Wind as an energy security experiment</div>
+            <div class="timeline-body">DOE wind R&D at ~$0.25B/yr in the late 1970s. PURPA (1978) created the first market for wind via "qualifying facility" status. California tax credits (25% state + 25% federal) sparked the first commercial wind farms in the Altamont, Tehachapi, and San Gorgonio passes in the early 1980s. Cumulative federal wind R&D 1975–1991: ~$2B. Most CA wind projects were uneconomic without incentives.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1992–2003: PTC and Boom-Bust Cycles</div>
+            <div class="timeline-title">The intermittent credit problem</div>
+            <div class="timeline-body">Energy Policy Act (1992) created the Production Tax Credit at 1.5¢/kWh (indexed to inflation). PTC expired and revived five times between 1992 and 2012, creating boom-bust installation cycles. Iowa (1983) and Minnesota (1994) enacted early renewable portfolio standards. The PTC stop-start pattern imposed significant investment uncertainty; installations fell sharply in PTC-lapse years (1999, 2001, 2003).</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2004–2015: RPS Drives Scale</div>
+            <div class="timeline-title">State mandates as the primary driver</div>
+            <div class="timeline-body">29 states had mandatory RPS by 2009. Wind captured 60–70% of early RPS procurement due to lowest cost among eligible resources. TX CREZ transmission build-out (~$7B, ratepayer-funded) unlocked West Texas wind resources. ARRA (2009) allowed cash grants in lieu of PTC. Annual PTC value grew to ~$3–4B/yr by 2012–2015. LBNL: RPS compliance reached $4.1B/yr nationally by 2017 with wind as primary beneficiary.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2016–2021: PTC Phase-down and Offshore Emergence</div>
+            <div class="timeline-title">Onshore matures; offshore begins</div>
+            <div class="timeline-body">Tax Cuts and Jobs Act (2017) began PTC phase-down to 60% of full value by 2019. State offshore wind mandates began: NY (9 GW by 2035), NJ (7.5 GW by 2035), MA (3.2 GW). OREC premiums of $30–80/MWh over market price. Block Island Wind Farm (2016): first U.S. offshore wind project. Vineyard Wind I approved 2021.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot" style="background:var(--aegean)"></div>
+            <div class="timeline-year" style="color:var(--aegean)">2022–2025: IRA Reset and OBBBA Cliff</div>
+            <div class="timeline-title">IRA restores full PTC; OBBBA creates 2027 deadline</div>
+            <div class="timeline-body">IRA (2022) restored the PTC to full value and extended through 2032 with potential for further extension via clean electricity standards. Offshore Wind Development Act provisions, BOEM lease auctions, and port infrastructure investments. OBBBA (2025) imposed a hard 12/31/2027 placed-in-service deadline for new wind, threatening the offshore project pipeline where projects often take 5–7 years from contract to operation.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CCS -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--ink)">
+          <span class="tech-dot" style="background:var(--chart-4);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:19px;font-weight:600">Carbon Capture and Storage (CCS)</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1975–2000: R&D Only</div>
+            <div class="timeline-title">Carbon capture as an R&D concept</div>
+            <div class="timeline-body">DOE carbon capture R&D began in the mid-1970s as an outgrowth of enhanced oil recovery (EOR) research. The Office of Fossil Energy funded research into post-combustion capture, pre-combustion capture, and oxyfuel combustion. CO₂-EOR projects (Rangely, Weyburn) demonstrated geological storage viability. Sleipner project (Norway, 1996) became the first commercial CO₂ geological storage. Cumulative U.S. federal CCS R&D 1975–2000: roughly $3–5B.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2001–2010: FutureGen and Demonstration Era</div>
+            <div class="timeline-title">Ambitious federal demonstration programs</div>
+            <div class="timeline-body">FutureGen (2003) was a $1B+ DOE-industry partnership for integrated gasification combined cycle (IGCC) with CCS; it was restructured and ultimately cancelled in 2015. ARRA (2009) provided $3.4B for CCS demonstration projects. The Carbon Sequestration Regional Partnerships (7 partnerships) spent roughly $500M mapping geological storage capacity. Section 45Q credit created 2008 at $20/tonne for geological storage and $10/tonne for EOR: too low to drive commercial deployment.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2011–2021: Demonstration Failures and §45Q Reform</div>
+            <div class="timeline-title">Kemper and the road to IRA</div>
+            <div class="timeline-body">Kemper County Energy Facility (Mississippi) failed at $7.5B total cost, abandoned CCS in 2017. Boundary Dam (Saskatchewan, Canada) demonstrated post-combustion capture at commercial scale. Bipartisan Budget Act (2018) reformed §45Q with a ramp schedule reaching $50/tonne for geological storage and $35/tonne for utilization by 2026 — the first commercially meaningful federal CCS credit. The IRA subsequently superseded these BBA amounts before they fully matured. Several projects announced under reformed §45Q, including Petra Nova (operational then suspended). A 2020 TIGTA audit found that 10 claimants accounted for ~$1B in total §45Q credits claimed (2010–2019), with ~87% ($894M) claimed without compliant EPA monitoring and verification plans; the IRS subsequently disallowed ~$531M in noncompliant credits.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot" style="background:var(--aegean)"></div>
+            <div class="timeline-year" style="color:var(--aegean)">2022–2025: IRA Expansion and OBBBA Preservation</div>
+            <div class="timeline-title">§45Q reaches $85/tonne; OBBBA creates EOR parity</div>
+            <div class="timeline-body">IRA (2022) raised §45Q to $85/tonne for geological storage, $60/tonne for utilization, and $180/tonne for direct air capture (DAC) geological storage. DOE committed $3.5B to four regional DAC hubs. Multiple industrial CCS projects announced. OBBBA (July 2025) preserved §45Q beyond 2027 and — critically — raised the utilization/EOR credit from $60 to $85/tonne, creating full parity between permanent storage and enhanced oil recovery for the first time. JCT estimated the OBBBA §45Q expansion will cost an additional ~$14B over FY2025–2034, on top of ~$36B in pre-OBBBA Treasury estimates. FEOC restrictions added for foreign entities.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BATTERY STORAGE -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--ink)">
+          <span class="tech-dot" style="background:var(--chart-1);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:19px;font-weight:600">Battery Storage</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1975–2008: Defense Origins and Early R&D</div>
+            <div class="timeline-title">Battery technology as a DOD and DOE research problem</div>
+            <div class="timeline-body">Battery storage R&D originated in DOD and NASA programs. DOE Advanced Battery Research funded lead-acid, nickel-cadmium, and early lithium-ion research. EPRI (Electric Power Research Institute) funded early grid-scale storage demonstrations. The USABC (U.S. Advanced Battery Consortium, 1991) coordinated DOE-automaker battery R&D for EVs. Cumulative federal battery storage R&D through 2008: roughly $1–2B, primarily through vehicle programs.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2009–2014: ARRA and the First Deployment Incentives</div>
+            <div class="timeline-title">Federal investment in grid-scale storage</div>
+            <div class="timeline-body">ARRA (2009) provided $620M for smart grid demonstrations, including early grid storage projects. DOE ARPA-E (created 2009) funded next-generation battery chemistries (flow batteries, sodium-sulfur, advanced Li-ion). California AB 2514 (2010) directed utilities to procure 1.3 GW of storage by 2020. CA SGIP (Self-Generation Incentive Program, established 2001) expanded to cover battery storage. The §48C manufacturing credit supported battery factory investments.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2015–2021: ITC Eligibility and State Mandates</div>
+            <div class="timeline-title">Storage becomes policy infrastructure</div>
+            <div class="timeline-body">IRS Notice 2015-70 clarified ITC eligibility for co-located solar+storage. FERC Order 841 (2018) required grid operators to allow storage participation in wholesale markets. NY, MA, NJ, and OR enacted storage mandates. CA SGIP reached $300M/yr in peak disbursements. NEM 1.0 and 2.0 incentivized solar+storage pairing. Treasury guidance (2020) extended ITC to standalone storage paired with solar. Lithium-ion battery costs fell 90%+ from 2010 to 2021.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot" style="background:var(--aegean)"></div>
+            <div class="timeline-year" style="color:var(--aegean)">2022–2025: IRA Standalone Credit and OBBBA Preservation</div>
+            <div class="timeline-title">The most structurally advantaged technology post-2027</div>
+            <div class="timeline-body">IRA (2022) §48E created the first standalone storage ITC (30%+ with adders), independent of solar co-location. §48C advanced manufacturing credit supported domestic battery production. CA NEM 3.0 (2023) was specifically designed to incentivize solar+storage over solar-only by restructuring export compensation. OBBBA (2025) preserved battery storage credits past 2027. Battery storage is the only major clean energy technology with a clear federal incentive runway through 2030 and rapidly growing state mandate stack.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GEOTHERMAL -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--ink)">
+          <span class="tech-dot" style="background:var(--chart-6);width:12px;height:12px"></span>
+          <span style="font-family:var(--font-display);font-size:19px;font-weight:600">Geothermal</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1975–1985: Post-OPEC R&D Peak</div>
+            <div class="timeline-title">Geothermal as a domestic energy security asset</div>
+            <div class="timeline-body">DOE geothermal R&D peaked at ~$0.35B/yr in FY1979 as part of the post-OPEC energy security response. The Geothermal Energy Research, Development, and Demonstration Act (1974) and the National Geothermal Energy Research, Development, and Demonstration Act (1980) formalized federal support. The Geysers complex (CA) provided the bulk of U.S. geothermal capacity. PURPA (1978) gave geothermal qualifying facility status. Energy Tax Act (1978) created the first federal ITC for geothermal equipment (10–15%), making geothermal one of the earliest renewable technologies to receive a federal investment tax credit.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1986–2004: Budget Cuts and Policy Limbo</div>
+            <div class="timeline-title">Neglected after the oil price collapse</div>
+            <div class="timeline-body">Reagan administration cuts reduced DOE geothermal R&D to under $0.1B/yr by the mid-1980s. Geothermal remained in a policy holding pattern through the 1990s. No new utility-scale geothermal projects of significance came online. The §48 ITC for geothermal power persisted at a reduced 10% rate. EPAct 1992 made geothermal electricity eligible for the new §45 PTC alongside wind and closed-loop biomass — the first production-based credit for geothermal. DOE R&D focused on reducing well drilling costs, which represent 50–60% of geothermal project capital expenditure. Cumulative federal geothermal support 1986–2004: roughly $2B.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2005–2015: EPAct and Enhanced Geothermal</div>
+            <div class="timeline-title">EGS as the long-term prize</div>
+            <div class="timeline-body">EPAct 2005 reauthorized and expanded DOE geothermal programs, including the first federal support for Enhanced Geothermal Systems (EGS). ARRA (2009) provided ~$400M for geothermal demonstration projects. Several state RPS programs added geothermal provisions; NV property tax exemption created. DOE's EGS research at the Newberry Volcano (OR) and Brady Hot Springs (NV). The Geothermal Rising advocacy coalition grew the state RPS carve-out framework.</div>
+          </div>
+          <div class="timeline-era">
+            <div class="timeline-dot" style="background:var(--aegean)"></div>
+            <div class="timeline-year" style="color:var(--aegean)">2022–2025: IRA and the Next-Generation Moment</div>
+            <div class="timeline-title">EGS and OBBBA preservation create a long runway</div>
+            <div class="timeline-body">IRA (2022) extended and expanded both the §48 ITC (up to 30% with prevailing wage/domestic content bonuses) and §45 PTC (up to 2.75¢/kWh) for geothermal, plus specific DOE loan guarantee authority for geothermal exploration. Residential geothermal heat pumps qualified for 30% under §25D. The Geothermal Energy from Oil and Gas Experienced Workforce Act directed DOE to support workforce transitions. OBBBA (2025) gave geothermal uniquely favorable treatment: the construction start deadline for the clean electricity ITC/PTC was extended to January 1, 2035 for geothermal — a full eight years beyond the 12/31/2027 cliff imposed on solar and wind, and the longest runway of any energy technology. MD enacted a specific geothermal RPS carve-out at $94.47/MWh (2022). Fervo Energy and other next-generation EGS developers raised significant private capital against this policy backdrop.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- KEY FINDINGS -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-findings" class="tab-panel">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">06</span>
+        <span class="section-title">Key Analytical Findings</span>
+        <span class="section-source">Seven conclusions</span>
+      </div>
+      <div class="finding"><div class="finding-num">01</div><div><div class="finding-title">Net metering materially changes solar's total: and the technology ranking</div><div class="finding-body">Incorporating NEM ($20–50B est.) raises solar's cumulative estimate to $185–290B, potentially surpassing nuclear ($155–200B + Price-Anderson). This crossover depends on NEM methodology and Price-Anderson valuation. Neither answer is obviously wrong: they reflect genuine disputes about what counts. Use the scenario toggle on the Overview tab to see each case.</div></div></div>
+      <div class="finding"><div class="finding-num">02</div><div><div class="finding-title">Solar and wind state incentives are larger than commonly recognized</div><div class="finding-body">Solar's state stack: RPS ($45–70B) + NEM ($20–50B) + state ITCs ($5–10B) = $70–130B. Wind's: RPS ($35–55B) + offshore mandates ($3–8B). These dwarf what shows up in federal public funding inventories alone.</div></div></div>
+      <div class="finding"><div class="finding-num">03</div><div><div class="finding-title">Nuclear state incentives are concentrated, recent, and politically fragile</div><div class="finding-body">Nuclear had near-zero state support from 1975–2015. Post-2016 ZECs ($8–15B cumulative) are significant but compressed into nine years and remain vulnerable to reversal: as Ohio demonstrated in 2023.</div></div></div>
+      <div class="finding"><div class="finding-num">04</div><div><div class="finding-title">RPS compliance costs are the largest undercounted state public funding category</div><div class="finding-body">LBNL: national RPS compliance reached $4.7B/yr by 2018. Cumulative 2001–2025: $80–130B shared primarily between solar and wind. Absent from most public funding comparisons that focus on federal tax expenditures. The table below shows directly what the EIA FY2022 report counted versus what this report adds.</div></div></div>
+
+      <!-- EIA vs CMM comparison — supporting Finding 04 -->
+      <div class="table-wrap" style="margin-top:var(--space-lg);margin-bottom:var(--space-2xl)">
+        <div class="table-header">
+          <div class="table-title">EIA FY2022 vs. CMM: What Gets Counted</div>
+          <div class="table-source">Why the totals differ so dramatically</div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Category</th><th>EIA FY2022 Report <span class="comparison-tag tag-eia">EIA</span></th><th>This Report <span class="comparison-tag tag-cmm">CMM</span></th><th>Difference and Reason</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="label-col">Nuclear (total FY2022)</td>
+              <td style="font-size:12px;color:var(--ash)">$390M — tax provisions + limited direct R&D to non-federal recipients</td>
+              <td style="font-size:12px;color:var(--ash)">~$1.7B — full DOE-NE appropriation + ZEC ratepayer transfers</td>
+              <td style="font-size:12px;color:var(--ash)">EIA excludes R&D to federal labs and state ZECs (not federal programs). CMM includes full DOE-NE budget authority and state ZEC programs.</td>
+            </tr>
+            <tr>
+              <td class="label-col">Solar (total FY2022)</td>
+              <td style="font-size:12px;color:var(--ash)">$7.5B — ITC tax expenditure + direct expenditures</td>
+              <td style="font-size:12px;color:var(--ash)">~$12–14B — ITC + SETO R&D + RPS share + NEM</td>
+              <td style="font-size:12px;color:var(--ash)">EIA excludes state RPS compliance costs (state programs) and NEM (no federal budget impact). CMM adds both.</td>
+            </tr>
+            <tr>
+              <td class="label-col">Wind (total FY2022)</td>
+              <td style="font-size:12px;color:var(--ash)">$3.6B — PTC tax expenditure + limited direct</td>
+              <td style="font-size:12px;color:var(--ash)">~$6–7B — PTC + WTO R&D + RPS compliance share</td>
+              <td style="font-size:12px;color:var(--ash)">EIA excludes state RPS compliance costs. CMM adds the wind share of national RPS compliance (~$2–2.5B/yr by 2022).</td>
+            </tr>
+            <tr>
+              <td class="label-col">RPS Compliance (all)</td>
+              <td style="font-size:12px;color:var(--ash)">$0 — explicitly excluded as state program</td>
+              <td style="font-size:12px;color:var(--ash)">~$4.7B/yr by 2018; $80–130B cumulative 2001–2025</td>
+              <td style="font-size:12px;color:var(--ash)">This single omission accounts for the largest gap between EIA and CMM totals. RPS compliance is funded by ratepayers under state mandate — real public cost, no federal budget impact.</td>
+            </tr>
+            <tr>
+              <td class="label-col">Net Metering</td>
+              <td style="font-size:12px;color:var(--ash)">$0 — excluded (no federal budget impact)</td>
+              <td style="font-size:12px;color:var(--ash)">$20–50B cumulative (CMM est.)</td>
+              <td style="font-size:12px;color:var(--ash)">Ratepayer cost transfer. EIA excludes by definition. CMM includes as structurally analogous to other ratepayer-funded state programs.</td>
+            </tr>
+            <tr>
+              <td class="label-col">Total FY2022 (all energy)</td>
+              <td style="font-size:12px;color:var(--ash)">~$18B (EIA FY2022 total, in-scope)</td>
+              <td style="font-size:12px;color:var(--ash)">Estimated ~$35–45B/yr using CMM definition</td>
+              <td style="font-size:12px;color:var(--ash)">The ~2x gap is almost entirely explained by RPS compliance costs and NEM transfers, both of which are real ratepayer costs excluded from EIA's federal-budget-only definition.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="finding"><div class="finding-num">05</div><div><div class="finding-title">Battery storage is the structural OBBBA winner: federal and state</div><div class="finding-body">CA SGIP ($1.5B+), NY/MA/NJ mandates, NEM+storage cross-funding, and preserved post-2027 federal credits position battery storage for an accelerating incentive stack through 2030. Unique state-federal stacking effect shared only with geothermal.</div></div></div>
+      <div class="finding"><div class="finding-num">06</div><div><div class="finding-title">IRA §45U creates nuclear deployment credit parity for the first time</div><div class="finding-body">§45U provides up to $15/MWh for existing nuclear. JCT: $13.1B over 2024–2028. Theoretical max $11.6B/yr. First time nuclear has received a deployment credit comparable in structure to the solar ITC and wind PTC.</div></div></div>
+      <div class="finding"><div class="finding-num">07</div><div><div class="finding-title">CCS and geothermal remain state-incentive thin and federally dependent</div><div class="finding-body">Both rely disproportionately on federal programs, making them more exposed to federal policy shifts than solar or wind: which have diversified state support stacks that partially insulate them from federal reversals.</div></div></div>
+
+      <hr class="rule-heavy">
+
+      <!-- IRA Projection Section removed: this report is retrospective (1975–2025 actuals and estimates). 
+           For forward-looking IRA projections, see JCT JCX-18-22, Treasury OTA March 2024, and Goldman Sachs (2023). -->
+
+      <div class="alert alert-info"><span class="alert-icon">i</span><span class="alert-text"><strong>Forward-looking projections excluded.</strong> This report covers 1975–2025 retrospective public funding only. The IRA (2022) and OBBBA (2025) created large, uncapped, demand-driven credits whose future cost depends on deployment rates, Treasury rulemaking, and FEOC enforcement. JCT, Treasury, Goldman Sachs, and Princeton REPEAT have published divergent projections ranging from $180B to $900B over 2023–2032. These are not included because actual claims data is not yet available for most post-2022 credits. As actuals become available through IRS statistics and JCT tax expenditure updates, they will be incorporated into future editions.</span></div>
+
+      <hr class="rule-heavy">
+
+      <div class="table-wrap">
+        <div class="table-header">
+          <div class="table-title">Key Data Sources</div>
+          <div class="table-source">Primary &amp; secondary</div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Source</th><th>Coverage</th><th>Key Contribution</th></tr></thead>
+          <tbody>
+            <tr><td class="label-col">CRS RS22858 (Clark, 2018)</td><td style="font-size:12px;color:var(--ash)">DOE R&D 1948–2018 by technology</td><td style="font-size:12px;color:var(--ash)">Nuclear = 48% of all DOE energy R&D over 70 years</td></tr>
+            <tr><td class="label-col">EIA Federal Public Funding FY2022</td><td style="font-size:12px;color:var(--ash)">All federal energy public funding</td><td style="font-size:12px;color:var(--ash)">FY2022 total ~$18B; solar $7.5B; wind $3.6B; nuclear $390M (pre-§45U)</td></tr>
+            <tr><td class="label-col">JCT Tax Expenditure Estimates</td><td style="font-size:12px;color:var(--ash)">Annual ITC/PTC/§45U/§45Q</td><td style="font-size:12px;color:var(--ash)">§45U: $13.1B over 2024–2028; solar ITC: $27.5B in FY2024 alone</td></tr>
+            <tr><td class="label-col">LBNL RPS Status Reports</td><td style="font-size:12px;color:var(--ash)">State RPS compliance costs, 2001–2024</td><td style="font-size:12px;color:var(--ash)">$4.7B/yr by 2018; roughly half of all U.S. RE growth linked to RPS</td></tr>
+            <tr><td class="label-col">LBNL / Brattle (Oct 2025)</td><td style="font-size:12px;color:var(--ash)">Factors in U.S. electricity price increases</td><td style="font-size:12px;color:var(--ash)">5pp NEM penetration → +1.1¢/kWh nationally; CA NEM → 2¢/kWh</td></tr>
+            <tr><td class="label-col">CPUC Public Advocates (2024)</td><td style="font-size:12px;color:var(--ash)">CA NEM 1.0/2.0 cost shift</td><td style="font-size:12px;color:var(--ash)">CA cost shift: $3.4B/yr (2021) → $8.5B/yr (2024)</td></tr>
+            <tr><td class="label-col">Pfund-Healey DBL (2011)</td><td style="font-size:12px;color:var(--ash)">First 15 years of public funding by technology</td><td style="font-size:12px;color:var(--ash)">Nuclear: $3.3B/yr; renewables: $0.4B/yr: 10× disparity in early years</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- METHODOLOGY -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="tab-methodology" class="tab-panel">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">07</span>
+        <span class="section-title">Methodology and Sources</span>
+        <span class="section-source">Full transparency</span>
+      </div>
+
+      <div class="method-box" style="border-left-color:var(--ink)">
+        <div class="method-box-title">Purpose and Scope</div>
+        <p>This report estimates cumulative U.S. federal and state public financial support for six energy technologies over 1975–2025 in real 2024 dollars. It draws on multiple government sources and independent analyses. All values are order-of-magnitude estimates. Annual figures in the charts are constructed from discrete anchor points and interpolated between them — they are not year-by-year audit-quality data.</p>
+        <p>The report uses a broad definition of public funding that includes: direct federal appropriations (R&D), tax expenditures (credits, deductions), direct grants and loan guarantees, state regulatory compliance costs, and ratepayer cost transfers. This is broader than the EIA subsidy definition, which limits scope to programs with an identifiable federal budget impact and excludes most state programs and ratepayer transfers.</p>
+      </div>
+
+      <!-- R&D -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-label" style="font-size:11px">01</span>
+          <span class="section-title" style="font-size:18px">Research and Development</span>
+        </div>
+
+        <div class="table-wrap">
+          <div class="table-header">
+            <div class="table-title">R&D Sources by Technology</div>
+            <div class="table-source">Full DOE budget authority</div>
+          </div>
+          <table class="data-table">
+            <thead><tr><th>Technology</th><th>DOE Office</th><th>Primary Source</th><th>Key Anchor Points</th><th>Uncertainty</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="label-col">Nuclear</td>
+                <td style="font-size:12px;color:var(--ash)">Office of Nuclear Energy (NE)</td>
+                <td style="font-size:12px;color:var(--ash)">DOE NE Budget page (energy.gov/ne/our-budget); CRS RS22858; GAO EMD-79-52 (1979)</td>
+                <td class="mono" style="font-size:11px">FY1979 peak ~$5.8B; FY2021=$1,508M; FY2022=$1,655M; FY2023=$1,773M; FY2024=$1,685M (all enacted, real 2024$)</td>
+                <td style="font-size:12px;color:var(--ash)">Low FY2016+; Medium pre-2000</td>
+              </tr>
+              <tr>
+                <td class="label-col">Solar</td>
+                <td style="font-size:12px;color:var(--ash)">Solar Energy Technologies Office (SETO)</td>
+                <td style="font-size:12px;color:var(--ash)">DOE SETO FOA announcements; DOE FY2025 Budget in Brief; CRS RS22858</td>
+                <td class="mono" style="font-size:11px">FY2019=$130M; FY2020=$125M; FY2021~$128M; FY2023~$280–360M; FY2025 req=$318M</td>
+                <td style="font-size:12px;color:var(--ash)">Medium: SETO budget not always publicly broken out separately from EERE total</td>
+              </tr>
+              <tr>
+                <td class="label-col">Wind</td>
+                <td style="font-size:12px;color:var(--ash)">Wind Energy Technologies Office</td>
+                <td style="font-size:12px;color:var(--ash)">CRS R40913 enacted figures (annual series); CRS RS22858 for pre-2010</td>
+                <td class="mono" style="font-size:11px">FY2016=$95.5M; FY2017=$90M; FY2018=$92M; FY2019=$92M; FY2020=$104M; FY2021=$110M; FY2022=$114M</td>
+                <td style="font-size:12px;color:var(--ash)">Low FY2013+; Medium pre-2009</td>
+              </tr>
+              <tr>
+                <td class="label-col">CCS</td>
+                <td style="font-size:12px;color:var(--ash)">Fossil Energy and Carbon Management (FECM)</td>
+                <td style="font-size:12px;color:var(--ash)">EIA FY2016-2022 subsidy report (Table A7); CBO 2012 federal fuel support brief</td>
+                <td class="mono" style="font-size:11px">ARRA 2009 ~$3.4B for CCS (multi-year, ~$700M/yr); FECM total ~$750–890M/yr FY2021–2022; CCS-specific subset estimated at ~$450–550M/yr (60–75% of FECM total, excluding methane, critical minerals, hydrogen, NETL operations)</td>
+                <td style="font-size:12px;color:var(--ash)">Medium-High: FECM budget mixes CCS with other fossil/carbon programs; CCS-specific subset is a CMM estimate. Pre-2010 values interpolated from CRS RS22858.</td>
+              </tr>
+              <tr>
+                <td class="label-col">Battery Storage</td>
+                <td style="font-size:12px;color:var(--ash)">Vehicle Technologies Office (VTO) + Energy Storage</td>
+                <td style="font-size:12px;color:var(--ash)">DOE FY2025 Budget in Brief (VTO=$502M req); DOE FY2023 CBJ (VTO=$602M req)</td>
+                <td class="mono" style="font-size:11px">VTO enacted FY2016~$280M, rising to ~$450M by FY2022; storage-specific ~25–35% of VTO</td>
+                <td style="font-size:12px;color:var(--ash)">High pre-2015: VTO includes EVs broadly; grid storage subset is an estimate</td>
+              </tr>
+              <tr>
+                <td class="label-col">Geothermal</td>
+                <td style="font-size:12px;color:var(--ash)">Geothermal Technologies Office (GTO)</td>
+                <td style="font-size:12px;color:var(--ash)">CRS R40913 enacted figures (annual series); CRS RS22858 for pre-2010</td>
+                <td class="mono" style="font-size:11px">FY2016=$70M; FY2017=$84M; FY2018=$105M; FY2019=$105M; FY2020=$148M; FY2021=$150M; FY2022=$162M; FY2025=$488M (IIJA-inflated)</td>
+                <td style="font-size:12px;color:var(--ash)">Low FY2013+; Note: FY2025 figure unusually high due to IIJA supplemental appropriations</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert alert-warn"><span class="alert-icon">!</span><span class="alert-text">All R&D figures represent full DOE program budget authority — the total appropriation for the relevant technology office. This is broader than the EIA subsidy report definition, which counts only R&D disbursed to non-federal recipients. The two definitions can differ by 2–3x for the same year. This report uses the broader definition because government funding of national laboratory and federally-operated R&D is a real public expenditure that shaped technology development, regardless of whether it flowed to a private entity.</span></div>
+
+        <div class="alert alert-info"><span class="alert-icon">i</span><span class="alert-text">Pre-1990 R&D values for solar, wind, geothermal, and battery storage carry higher uncertainty. Historical program-level data is less granular; values are estimated from CRS RS22858 aggregate totals and DOE budget history tables. The nuclear pre-1990 series is better anchored due to the GAO (1979) review covering FY1950–1978 and the CRS RS22858 nuclear share data.</span></div>
+      </div>
+
+      <!-- Tax Credits -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-label" style="font-size:11px">02</span>
+          <span class="section-title" style="font-size:18px">Tax Credits and Tax Expenditures</span>
+        </div>
+
+        <div class="table-wrap">
+          <div class="table-header">
+            <div class="table-title">Tax Credit Sources by Technology</div>
+            <div class="table-source">JCT · EIA · Treasury OTA</div>
+          </div>
+          <table class="data-table">
+            <thead><tr><th>Credit / Technology</th><th>Source</th><th>Key Values</th><th>What Is Included</th><th>What Is Excluded</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="label-col">Solar ITC (§48/§48E)</td>
+                <td style="font-size:12px;color:var(--ash)">JCT annual tax expenditure estimates; EIA FY2016–2022 subsidy report (Table A2); Treasury OTA March 2024</td>
+                <td class="mono" style="font-size:11px">FY2016~$2.2B; FY2022=$7.5B (EIA); FY2024 est.~$18–27B (post-IRA); Treasury OTA: $424.6B ITC+PTC over 2024–2033</td>
+                <td style="font-size:12px;color:var(--ash)">Residential and commercial ITC; Section 1603 cash grants in lieu of ITC (2009–2011); IRA adders (domestic content, energy community, low-income)</td>
+                <td style="font-size:12px;color:var(--ash)">State solar ITCs (counted separately under state incentives); MACRS accelerated depreciation (not technology-specific)</td>
+              </tr>
+              <tr>
+                <td class="label-col">Wind PTC (§45)</td>
+                <td style="font-size:12px;color:var(--ash)">JCT tax expenditure estimates; EIA FY2016–2022 report; CRS wind energy policy reports</td>
+                <td class="mono" style="font-size:11px">FY2013 peak ~$5.8B (with ARRA grants); FY2016=$1.3B (EIA); FY2019~$4.0B; FY2022~$3.5B</td>
+                <td style="font-size:12px;color:var(--ash)">Federal PTC at 2.6–2.75¢/kWh; phase-down periods 2017–2019; IRA extension and restoration to full value</td>
+                <td style="font-size:12px;color:var(--ash)">Offshore wind ORECs (counted under state mandates); state wind tax exemptions (counted under state incentives)</td>
+              </tr>
+              <tr>
+                <td class="label-col">Nuclear §45U</td>
+                <td style="font-size:12px;color:var(--ash)">JCT; IRA §45U enacted 2022 (effective tax year 2023)</td>
+                <td class="mono" style="font-size:11px">JCT: $13.1B estimated FY2024–2028; theoretical max ~$11.6B/yr (all U.S. nuclear capacity at $15/MWh)</td>
+                <td style="font-size:12px;color:var(--ash)">§45U production credit for existing nuclear ($15/MWh maximum, phases out as electricity price rises above $25/MWh)</td>
+                <td style="font-size:12px;color:var(--ash)">Pre-2023 nuclear tax provisions (accelerated depreciation, decommissioning fund deductions) excluded as not technology-specific. EPAct 2005 nuclear PTC (§45J) never triggered — no reactors built under that provision.</td>
+              </tr>
+              <tr>
+                <td class="label-col">CCS §45Q</td>
+                <td style="font-size:12px;color:var(--ash)">JCT; EIA FY2016–2022 report; IRA expansion analysis</td>
+                <td class="mono" style="font-size:11px">Pre-2018: $20/tonne storage, $10/tonne EOR. BBA ramp to $50/$35 (superseded by IRA). IRA: $85/tonne storage, $60/tonne utilization, $180/tonne DAC. OBBBA: $85 for all uses (parity). JCT scored IRA §45Q at ~$3.2B/decade; Treasury estimated ~$30B/decade — order-of-magnitude divergence reflects uncertainty about deployment pace.</td>
+                <td style="font-size:12px;color:var(--ash)">§45Q as enacted through OBBBA (July 2025); includes EOR parity at $85/tonne. Credit subsidy cost of DOE loan guarantees for CCS counted separately under grants.</td>
+                <td style="font-size:12px;color:var(--ash)">RGGI and cap-and-trade revenues (indirect; not a direct credit); state carbon pricing adjacency effects. State CCS grants (WY, ND, IL, LA, TX) not included in federal series — see State Incentives tab.</td>
+              </tr>
+              <tr>
+                <td class="label-col">Battery §48C/§48E</td>
+                <td style="font-size:12px;color:var(--ash)">JCT; IRA §48E standalone storage ITC; §48C advanced manufacturing</td>
+                <td class="mono" style="font-size:11px">Pre-IRA: ITC available only for solar-paired storage; §48C manufacturing: $10B IRA allocation. Post-IRA §48E: 30%+ standalone ITC</td>
+                <td style="font-size:12px;color:var(--ash)">§48E standalone storage ITC (2023+); §48C advanced manufacturing credit for domestic battery production; co-located solar+storage ITC (pre-2023)</td>
+                <td style="font-size:12px;color:var(--ash)">§45X production credits for battery components (manufacturing, not deployment); EV credits (§30D) excluded as transportation policy</td>
+              </tr>
+              <tr>
+                <td class="label-col">Geothermal ITC/PTC</td>
+                <td style="font-size:12px;color:var(--ash)">JCT; EIA FY2016–2022 report; IRA/OBBBA provisions</td>
+                <td class="mono" style="font-size:11px">§48 ITC for geothermal power since 1978 (10–15%, later 10%, IRA raised to 30% with bonuses). §45 PTC eligibility since EPAct 1992 (up to 2.75¢/kWh). §25D residential GHP credit: 30%. Values small due to limited installed base: ~$250–350M/yr post-IRA. OBBBA extends construction deadline to Jan 1, 2035.</td>
+                <td style="font-size:12px;color:var(--ash)">§48 ITC for geothermal power; §45 PTC eligibility (choose one); §25D residential geothermal heat pump credit; §48E/§45Y clean electricity credits (post-2024)</td>
+                <td style="font-size:12px;color:var(--ash)">State geothermal incentives (counted separately); exploration risk sharing (DOE loan guarantees for EGS excluded — no such guarantees yet issued)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert alert-info"><span class="alert-icon">i</span><span class="alert-text">Tax expenditure estimates measure foregone federal revenue, not cash outlays. The JCT and Treasury produce annual estimates; these are the primary source for all credit values in this report. Post-IRA values (2023+) carry greater uncertainty because the IRA created uncapped, demand-driven credits — actual utilization depends on deployment rates and Treasury rulemaking on adder qualifications.</span></div>
+      </div>
+
+      <!-- Grants and Direct Expenditures -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-label" style="font-size:11px">03</span>
+          <span class="section-title" style="font-size:18px">Grants and Direct Expenditures</span>
+        </div>
+
+        <p style="font-size:13px;color:var(--ash);line-height:1.7;margin-bottom:var(--space-lg)">This category covers non-R&D direct federal expenditures: demonstration project grants, ARRA cash grants in lieu of tax credits (Section 1603), DOE loan program disbursements, and other direct support. The primary sources are EIA FY2016–2022 (Table A6), DOE USASpending.gov data, and CBO analyses.</p>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Program</th><th>Technologies</th><th>Amount</th><th>Period</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td class="label-col">Section 1603 Cash Grants (ARRA)</td><td style="font-size:12px;color:var(--ash)">Wind (~$14.7B, 56%), Solar (~$8.4B, 32%), Geothermal, Other</td><td class="mono">~$26.2B total disbursed</td><td style="font-size:12px;color:var(--ash)">2009–2011</td><td style="font-size:12px;color:var(--ash)">Treasury data; EIA subsidy reports</td></tr>
+              <tr><td class="label-col">DOE Loan Guarantees (Title XVII)</td><td style="font-size:12px;color:var(--ash)">Nuclear (Vogtle ~$8.3B; Palisades ~$1.5B); Solar (SunPower, First Solar, Solyndra); Wind (offshore)</td><td class="mono">~$16B+ committed</td><td style="font-size:12px;color:var(--ash)">2008–2025</td><td style="font-size:12px;color:var(--ash)">DOE Loan Programs Office; EIA 2023 report; CRS R47293</td></tr>
+              <tr><td class="label-col">ARRA Clean Energy Demonstration</td><td style="font-size:12px;color:var(--ash)">CCS (FutureGen, regional partnerships), Smart Grid, Solar, Wind</td><td class="mono">~$30B total EERE+FE</td><td style="font-size:12px;color:var(--ash)">FY2009–2014</td><td style="font-size:12px;color:var(--ash)">CBO 2012; EIA 2013 subsidy report</td></tr>
+              <tr><td class="label-col">IIJA Clean Energy Demonstrations</td><td style="font-size:12px;color:var(--ash)">CCS (4 DAC hubs $3.5B), Battery, Geothermal, Nuclear (advanced)</td><td class="mono">~$16B for EERE</td><td style="font-size:12px;color:var(--ash)">FY2022–2031</td><td style="font-size:12px;color:var(--ash)">CRS E&W Appropriations reports; DOE program pages</td></tr>
+              <tr><td class="label-col">FutureGen (CCS demo)</td><td style="font-size:12px;color:var(--ash)">CCS only</td><td class="mono">~$1B+</td><td style="font-size:12px;color:var(--ash)">2003–2015</td><td style="font-size:12px;color:var(--ash)">DOE; CBO</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert alert-warn"><span class="alert-icon">!</span><span class="alert-text">Loan guarantees are not the same as grants. The federal cost of a loan guarantee is the credit subsidy cost — the present value of expected losses, not the face value of the loan. For Vogtle, DOE's estimated credit subsidy cost was roughly $460M on the $8.3B guarantee. However, the guarantee enabled a project that could not obtain conventional private financing, so the full face value is reported in some analyses as the public exposure. This report notes the distinction but uses face values for comparability.</span></div>
+
+        <div class="alert alert-info"><span class="alert-icon">i</span><span class="alert-text">Chart methodology note: The nuclear loan guarantee chart stream apportions the Vogtle $8.3B commitment across construction years (2010–2022, ~$0.4–0.6B/yr) and the Palisades $1.5B guarantee across 2023–2025. These are annualized approximations of multi-year commitments, not official annual DOE LPO disbursement figures. Pre-2010 nuclear loan guarantee values are zero — no meaningful federal loan guarantees for nuclear existed before EPAct 2005 / Title XVII.</span></div>
+      </div>
+
+      <!-- RPS and State Compliance Costs -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-label" style="font-size:11px">04</span>
+          <span class="section-title" style="font-size:18px">RPS and State Compliance Costs</span>
+        </div>
+
+        <p style="font-size:13px;color:var(--ash);line-height:1.7;margin-bottom:var(--space-lg)">Renewable Portfolio Standard (RPS) compliance costs are the above-market payments made by utilities (and ultimately ratepayers) to procure renewable electricity in compliance with state mandates. These are the largest single state-level public support mechanism and are largely absent from federal subsidy inventories.</p>
+
+        <div class="method-box">
+          <div class="method-box-title">How RPS Compliance Costs Are Estimated</div>
+          <p>Primary source: Lawrence Berkeley National Laboratory (LBNL) Renewable Portfolio Standards Annual Status Report (published annually). LBNL calculates total above-market cost as the difference between the contract price paid for renewable energy and the applicable avoided-cost or wholesale market benchmark. For SREC (solar renewable energy credit) markets, the compliance cost includes SREC prices paid at auction or bilaterally.</p>
+          <p>Key LBNL findings used in this report: Total national RPS compliance cost reached $4.7B/yr by FY2018. Solar SREC carve-outs (NJ, MA, DC, MD, CT) have carried prices of $200–450/MWh, generating the majority of SREC market value. Roughly half of all U.S. renewable energy growth 2000–2020 is attributable to RPS policies.</p>
+          <p>Wind vs. solar allocation: LBNL reports total RPS compliance costs, not wind-vs.-solar splits for every year. The solar and wind RPS shares in the charts are CMM estimates based on renewable procurement shares by year from LBNL deployment data. This introduces meaningful uncertainty particularly before 2015.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Type</th><th>Technologies</th><th>Est. Cumulative</th><th>Key Source</th><th>Included/Excluded</th></tr></thead>
+            <tbody>
+              <tr><td class="label-col">RPS Compliance Costs</td><td style="font-size:12px;color:var(--ash)">Solar (SREC carve-outs); Wind (general RPS procurement)</td><td class="mono">$80–130B total, 2001–2025</td><td style="font-size:12px;color:var(--ash)">LBNL RPS Status Reports (annual); LBNL Barbose et al. 2019</td><td style="font-size:12px;color:var(--ash)">Included. Above-market cost only, not total contract value</td></tr>
+              <tr><td class="label-col">TX CREZ Transmission</td><td style="font-size:12px;color:var(--ash)">Wind</td><td class="mono">~$7B</td><td style="font-size:12px;color:var(--ash)">PUCT; EIA grid investment data</td><td style="font-size:12px;color:var(--ash)">Partially included in wind grants/infrastructure; note this was ratepayer-funded, not state appropriation</td></tr>
+              <tr><td class="label-col">Nuclear ZECs</td><td style="font-size:12px;color:var(--ash)">Nuclear (NY, IL, NJ, CT, OH)</td><td class="mono">$10–18B, 2016–2025</td><td style="font-size:12px;color:var(--ash)">State utility commissions; individual ZEC proceedings; CMM calculation from program $/yr rates</td><td style="font-size:12px;color:var(--ash)">Included. Above-market payment to nuclear operators; funded through electricity rates</td></tr>
+              <tr><td class="label-col">Offshore Wind ORECs</td><td style="font-size:12px;color:var(--ash)">Wind</td><td class="mono">$3–8B cumulative to date</td><td style="font-size:12px;color:var(--ash)">State PUC OREC proceedings (NY, NJ, MA, CT); BOEM data</td><td style="font-size:12px;color:var(--ash)">Included; though most payments are still prospective. Values reflect contracts executed, not yet fully disbursed</td></tr>
+              <tr><td class="label-col">Geothermal RPS Carve-outs</td><td style="font-size:12px;color:var(--ash)">Geothermal</td><td class="mono">$1–3B cumulative</td><td style="font-size:12px;color:var(--ash)">MD PSC (MD RPS carve-out $94.47/MWh enacted 2022); NV, AZ state utility filings</td><td style="font-size:12px;color:var(--ash)">Included; thin sourcing. Cumulative total modest given small installed base</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Net Metering -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-label" style="font-size:11px">05</span>
+          <span class="section-title" style="font-size:18px">Net Metering</span>
+        </div>
+
+        <div class="method-box">
+          <div class="method-box-title">What Net Metering Is and Is Not</div>
+          <p>Net metering (NEM) is a utility billing mechanism that credits distributed solar owners for excess electricity at or near the full retail rate (typically $0.25–0.35/kWh). The cost transfer arises because the retail rate includes fixed infrastructure costs (poles, wires, transformers) that solar owners avoid paying when they export power at the retail price but still use the grid for backup. Non-solar ratepayers pay more to cover those fixed costs.</p>
+          <p>This is not a government expenditure. It does not appear in federal budgets, state budgets, or EIA subsidy inventories. It is a regulatory design choice that redistributes costs among ratepayers. CMM includes it because: (1) it is a material public policy intervention that benefits a specific technology; (2) the scale is comparable to or larger than many programs that are counted; and (3) structural analogues (Price-Anderson for nuclear, RPS for wind) are included.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Source</th><th>Method</th><th>Finding</th><th>CMM Use</th></tr></thead>
+            <tbody>
+              <tr><td class="label-col">LBNL / Brattle (Oct 2025)</td><td style="font-size:12px;color:var(--ash)">Econometric analysis of state electricity price changes; controlled for fuel mix, demand, infrastructure</td><td style="font-size:12px;color:var(--ash)">5pp increase in net-metered solar penetration associated with +1.1¢/kWh nationally</td><td style="font-size:12px;color:var(--ash)">Primary quantitative anchor for national cost transfer estimate</td></tr>
+              <tr><td class="label-col">CPUC Public Advocates Office (2024)</td><td style="font-size:12px;color:var(--ash)">California-specific rate analysis: fixed cost shortfall from NEM 1.0/2.0 participants</td><td style="font-size:12px;color:var(--ash)">CA cost shift grew from $3.4B/yr (2021) to $8.5B/yr (2024); ~21–27% of non-solar CA bills</td><td style="font-size:12px;color:var(--ash)">California anchor point; CA = ~40–50% of national NEM total</td></tr>
+              <tr><td class="label-col">Verdant Associates (2021)</td><td style="font-size:12px;color:var(--ash)">CA NEM 2.0 unreformed 20-year cost projection for CPUC NEM 3.0 proceeding</td><td style="font-size:12px;color:var(--ash)">Cumulative CA cost shift ~$13B if unreformed over 20 years (~$650M/yr avg)</td><td style="font-size:12px;color:var(--ash)">Pre-NEM 3.0 baseline; confirms CPUC methodology</td></tr>
+              <tr><td class="label-col">NREL (2025)</td><td style="font-size:12px;color:var(--ash)">National household-level analysis at current (2024) penetration rates</td><td style="font-size:12px;color:var(--ash)">&lt;$1/month per non-solar ratepayer nationally at current penetration</td><td style="font-size:12px;color:var(--ash)">Lower bound; per-household metric understates total when scaled across millions of non-solar households</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="method-box">
+          <div class="method-box-title">CMM National Estimate: $20–50B Cumulative 1995–2025</div>
+          <p>Method: Apply the LBNL/Brattle penetration-price elasticity (+1.1¢/kWh per 5pp NEM penetration) to historical annual NEM deployment data. Multiply implied price premium by non-solar electricity consumption. CA is modeled separately using the CPUC anchor points ($0–0.5B/yr 1995–2010, rising to $3.4B/yr by 2021, $8.5B/yr by 2024, then declining post-NEM 3.0). National = CA estimate + 2–3x multiplier for other states (CA has ~40–50% of national NEM capacity).</p>
+          <p>Why the range is wide: (1) Disputed causation — studies disagree on whether NEM penetration is the cause of price increases vs. correlated factors; (2) Value-of-solar offset — solar advocates argue distributed solar provides grid services (peak reduction, T&D deferral, avoided emissions) worth $0.06–0.14/kWh, potentially exceeding the retail rate credit; (3) Pre-2015 data is thin; most NEM growth occurred after 2010.</p>
+          <p>What is excluded: NEM+storage cost transfers are counted in the battery storage state stream, not here. Commercial NEM (non-residential) is included in the estimate. Community solar cost transfers are not separately quantified.</p>
+        </div>
+      </div>
+
+      <!-- ZECs and State Mandates -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-label" style="font-size:11px">06</span>
+          <span class="section-title" style="font-size:18px">ZECs, State Mandates, and Other State Programs</span>
+        </div>
+
+        <p style="font-size:13px;color:var(--ash);line-height:1.7;margin-bottom:var(--space-lg)">This category covers state-level programs outside of RPS compliance that provide direct financial benefit to specific technologies. Like RPS compliance costs, most of these are ratepayer-funded rather than government-appropriated.</p>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Program / Type</th><th>Technology</th><th>Calculation Method</th><th>Cumulative Estimate</th><th>Source Quality</th></tr></thead>
+            <tbody>
+              <tr><td class="label-col">Zero Emission Credits (ZECs)</td><td style="font-size:12px;color:var(--ash)">Nuclear</td><td style="font-size:12px;color:var(--ash)">Annual $/yr program rate × years active: NY ~$462M/yr (2016+); IL ~$235M/yr (2017+); NJ ~$300M/yr (2019+); CT ~$200M/yr (2019+); OH $150M/yr (2019–2022)</td><td class="mono">$10–18B (2016–2025)</td><td style="font-size:12px;color:var(--ash)">High: program rates from state PUC orders; date ranges from enacted legislation</td></tr>
+              <tr><td class="label-col">Palisades Restart (MI)</td><td style="font-size:12px;color:var(--ash)">Nuclear</td><td style="font-size:12px;color:var(--ash)">MI state appropriation ~$300M (enacted); DOE Title XVII loan guarantee ~$1.5B (announced 2024)</td><td class="mono">~$1.8B</td><td style="font-size:12px;color:var(--ash)">High: specific program with published amounts. Note: DOE loan guarantee = credit subsidy cost ~$460M, not $1.5B face value</td></tr>
+              <tr><td class="label-col">CA SGIP (Battery)</td><td style="font-size:12px;color:var(--ash)">Battery Storage</td><td style="font-size:12px;color:var(--ash)">CPUC annual SGIP program disbursements; program total through 2025. Morgan Lewis (2026) confirms $280M most recent allocation</td><td class="mono">~$1.5B+ (2001–2025)</td><td style="font-size:12px;color:var(--ash)">High: CPUC public program data</td></tr>
+              <tr><td class="label-col">State Battery Procurement Mandates</td><td style="font-size:12px;color:var(--ash)">Battery Storage</td><td style="font-size:12px;color:var(--ash)">Morgan Lewis (2026) documents 13 states with procurement targets. Cost transfer estimated from ratepayer-funded contracts above market. Morgan Lewis: ~40 GW by end-2026 U.S. installed; ~80–85% in CA and TX</td><td class="mono">$3–8B est. (2020–2025)</td><td style="font-size:12px;color:var(--ash)">Medium: mandate GW targets are well-sourced; dollar cost of above-market contracts requires per-state rate case analysis not fully available</td></tr>
+              <tr><td class="label-col">State Solar ITCs / Rebates</td><td style="font-size:12px;color:var(--ash)">Solar</td><td style="font-size:12px;color:var(--ash)">Key programs: NC 35% ITC (2007–2015, ~$800M–1.2B total); CA CSI (2006–2013, ~$2B); MA SMART (~$200M/yr); NY-Sun ($1B+ committed). State budget documents + program reports</td><td class="mono">$5–10B est.</td><td style="font-size:12px;color:var(--ash)">Medium: major programs well-sourced; smaller state programs not fully catalogued</td></tr>
+              <tr><td class="label-col">MD Geothermal RPS Carve-out</td><td style="font-size:12px;color:var(--ash)">Geothermal</td><td style="font-size:12px;color:var(--ash)">MD PSC enacted $94.47/MWh geothermal tier (2022). Small installed base limits total cost transfer. Estimate based on contracted capacity × $/MWh premium above market</td><td class="mono">&lt;$0.5B to date</td><td style="font-size:12px;color:var(--ash)">High for program terms; low for utilization (minimal capacity deployed)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- What is excluded -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-label" style="font-size:11px">07</span>
+          <span class="section-title" style="font-size:18px">What Is Not Included and Why</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Excluded Item</th><th>Relevance</th><th>Reason for Exclusion</th></tr></thead>
+            <tbody>
+              <tr><td class="label-col">Price-Anderson Act (Nuclear)</td><td style="font-size:12px;color:var(--ash)">Caps nuclear operator liability at ~$13.5B; estimated full liability could be $100B+. GAO, CBO, and independent analysts treat this as a substantial implicit subsidy.</td><td style="font-size:12px;color:var(--ash)">No identifiable federal budget impact. EIA explicitly excludes it. The cost transfer is contingent on an accident occurring — in expectation, the value depends on probability assumptions that are highly disputed. Including it could add $5–50B to the nuclear cumulative total depending on assumptions. Users should be aware this is excluded.</td></tr>
+              <tr><td class="label-col">Nuclear Waste Fund (DOE)</td><td style="font-size:12px;color:var(--ash)">~$43B in the fund (ratepayer-funded at 0.1¢/kWh since 1983); permanent repository never built despite decades of collections.</td><td style="font-size:12px;color:var(--ash)">Ratepayer-funded; not a public expenditure. The unresolved repository situation represents a federal obligation not fully discharged — arguably a future public cost. Not quantified here.</td></tr>
+              <tr><td class="label-col">Federal Power Marketing Administrations (Hydro)</td><td style="font-size:12px;color:var(--ash)">BPA, WAPA, SWPA provide below-market federal hydropower. EIA 2008 estimated ~$2B/yr in interest rate support.</td><td style="font-size:12px;color:var(--ash)">Hydropower is not one of the six technologies covered by this report.</td></tr>
+              <tr><td class="label-col">Military / DOD nuclear programs</td><td style="font-size:12px;color:var(--ash)">Naval nuclear propulsion R&D (DOD/Navy) and weapons programs (NNSA) drove significant nuclear technology development that benefited civilian nuclear.</td><td style="font-size:12px;color:var(--ash)">Defense programs have no civilian market application as a primary purpose; attribution to commercial nuclear R&D would require non-standard assumptions. NNSA weapons budget exceeds $20B/yr — including any fraction would dramatically skew the nuclear R&D estimate.</td></tr>
+              <tr><td class="label-col">General tax provisions (MACRS, bonus depreciation)</td><td style="font-size:12px;color:var(--ash)">Accelerated depreciation benefits all capital-intensive industries including energy.</td><td style="font-size:12px;color:var(--ash)">Not technology-specific; benefits all capital investments. EIA explicitly excludes these from its energy subsidy definition. Including them on a pro-rata basis would add substantially to all technologies.</td></tr>
+              <tr><td class="label-col">EV tax credits (§30D, §45W)</td><td style="font-size:12px;color:var(--ash)">Indirectly benefits battery storage through manufacturing scale and cost reduction.</td><td style="font-size:12px;color:var(--ash)">Transportation policy, not energy storage policy. Attribution to grid storage would require cost-allocation assumptions.</td></tr>
+              <tr>
+                <td class="label-col">State and local property tax abatements and exemptions</td>
+                <td style="font-size:12px;color:var(--ash)">
+                  <strong>Wind:</strong> TX Chapter 312/313 abatements (largest program nationally; enabled most West Texas wind development); IA full property tax exemption on wind turbines; MN, KS, OK, SD, ND exemptions. AWEA estimated TX Chapter 313 alone provided ~$1.5B in abatements to wind projects through its 2022 expiration.<br><br>
+                  <strong>Solar:</strong> ~36 states exempt solar installations from property tax assessment. Major states include CA, NY, NJ, MA, CO, AZ. Lawrence Berkeley (2021) found state solar property tax exemptions saved solar owners $0.5–1.5¢/kWh in many states, implying meaningful cumulative value at current installed base.<br><br>
+                  <strong>Nuclear:</strong> Treatment varies dramatically by state. Some states tax at full assessed value; others use production-value assessment (far lower given capital intensity); others have negotiated payment-in-lieu-of-taxes (PILOT) agreements. Large nuclear plants can represent 30–50% of a county's assessed value, making the abatement terms consequential.<br><br>
+                  <strong>Battery/CCS/Geothermal:</strong> Property tax exemptions exist in some states for storage and geothermal; not systematically catalogued at dollar scale.
+                </td>
+                <td style="font-size:12px;color:var(--ash)">
+                  <strong>Why excluded from all technology totals:</strong> No single national database tracks actual abatement dollar values by technology at the project or state level. DSIRE (Database of State Incentives for Renewables and Efficiency) catalogs program existence and terms but does not report aggregate expenditure values. Individual state analyses exist — AWEA/ACP for wind, LBNL for solar — but use different methodologies and coverage periods that cannot be directly summed into a cross-technology comparable series.<br><br>
+                  <strong>The asymmetry this creates:</strong> Wind and solar likely benefit most in absolute dollar terms from property tax exemptions given their large installed bases and broad state coverage. Nuclear may benefit most on a per-plant basis given asset values. CCS, battery storage, and geothermal have limited coverage. Excluding abatements therefore creates a mild undercount that is not uniform across technologies — it disproportionately understates wind and solar state support relative to CCS and geothermal.<br><br>
+                  <strong>Future inclusion:</strong> A rigorous abatement analysis would require compiling county assessor records, PILOT agreements, and state tax expenditure reports for each major project in each state. This is a tractable research project but beyond the scope of the current report. It will be incorporated in a future edition.
+                </td>
+              </tr>
+              <tr><td class="label-col">Community solar cost transfers</td><td style="font-size:12px;color:var(--ash)">Community solar subscribers typically receive credits at above-wholesale rates.</td><td style="font-size:12px;color:var(--ash)">Methodology for estimating cross-subsidy value not established; programs vary significantly by state. Not included in NEM estimate.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Inflation adjustment -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-l
+      <!-- Known Exclusions and Data Gaps -->
+      <div style="margin-bottom:var(--space-2xl)">
+        <div class="section-header" style="margin-bottom:var(--space-lg)">
+          <span class="section-label" style="font-size:11px">08</span>
+          <span class="section-title" style="font-size:18px">Known Exclusions and Data Gaps</span>
+        </div>
+
+        <p style="font-size:13px;color:var(--ash);line-height:1.7;margin-bottom:var(--space-lg)">This report does not capture all forms of public support for energy technologies. The following material categories are excluded or only partially captured, with approximate magnitudes where estimable. Transparency about what is <em>not</em> included is as important as what is.</p>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th style="width:160px">Exclusion</th><th>Technologies Affected</th><th>Est. Magnitude</th><th>Reason for Exclusion</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="label-col">MACRS 5-Year Accelerated Depreciation</td>
+                <td style="font-size:12px;color:var(--ash)">Solar, Wind, Battery, Geothermal, CCS (5-yr recovery vs. 20-30 yr economic life)</td>
+                <td class="mono">$5-15B/yr (all energy); cumulative $50-150B+</td>
+                <td style="font-size:12px;color:var(--ash)">MACRS (est. 1986) is a general business tax provision, not energy-specific. Treasury classifies it as part of the reference tax law baseline, meaning it is not a "tax expenditure" under that definition. The 5-yr recovery period for renewables (vs. 20-30 yr economic life) provides material benefit. CBO includes MACRS in wind/solar analyses. Excluded because no technology-specific annual series exists; benefit is entangled with bonus depreciation (100% under TCJA through 2022, phasing to 40% in 2025). If included, would increase solar and wind cumulative totals by roughly 15-25%.</td>
+              </tr>
+              <tr>
+                <td class="label-col">Section 1603 Cash Grants (allocation gap)</td>
+                <td style="font-size:12px;color:var(--ash)">Wind (~$14.7B, 56%), Solar (~$8.4B, 32%), Geothermal and other (~$3.1B, 12%)</td>
+                <td class="mono">$26.2B total (Treasury)</td>
+                <td style="font-size:12px;color:var(--ash)">Treasury disbursed $26.2B to 109,766 clean energy projects (2009-2018). This amount is partially reflected in the solar and wind grant streams in the charts, but may be understated. Wind received 56% of dollars despite only 1% of project count. The technology-level annual disbursement breakdown is not fully reconciled against chart grant data; a gap of $5-15B may exist.</td>
+              </tr>
+              <tr>
+                <td class="label-col">State Property Tax Exemptions</td>
+                <td style="font-size:12px;color:var(--ash)">Solar (36 states), Wind (IA, TX, KS, MN, OK, others), Geothermal (select)</td>
+                <td class="mono">$5-20B cumulative (all technologies)</td>
+                <td style="font-size:12px;color:var(--ash)">No aggregate annual series exists. 36 states exempt solar from property tax; IA exempts wind for 5-10 years; TX Ch. 312 wind abatements est. $200-500M cumulative. This is the single largest identified data gap in the analysis.</td>
+              </tr>
+              <tr>
+                <td class="label-col">State Sales Tax Exemptions</td>
+                <td style="font-size:12px;color:var(--ash)">Solar (25 states), Wind (IA, MN, CO, others), Geothermal (select)</td>
+                <td class="mono">$2-8B cumulative</td>
+                <td style="font-size:12px;color:var(--ash)">25 states exempt solar equipment; several exempt wind. On a $20K residential system at ~6% sales tax, the exemption is ~$1,200. At ~5M cumulative U.S. residential installations, residential solar alone may represent $3-6B. No aggregate annual series exists.</td>
+              </tr>
+              <tr>
+                <td class="label-col">DOE LPO Portfolio (non-nuclear)</td>
+                <td style="font-size:12px;color:var(--ash)">Solar mfg., Battery mfg. (Ultium, BlueOval SK), Clean vehicles, Grid</td>
+                <td class="mono">$40B+ committed post-IRA</td>
+                <td style="font-size:12px;color:var(--ash)">Only nuclear (Vogtle, Palisades) is tracked in this report. The broader LPO portfolio for battery/solar manufacturing is $40B+ in face value and growing. Excluded because credit subsidy costs are not publicly disaggregated by technology.</td>
+              </tr>
+              <tr>
+                <td class="label-col">Section 45X Mfg. PTC</td>
+                <td style="font-size:12px;color:var(--ash)">Solar components, Wind components, Battery cells, Inverters</td>
+                <td class="mono">$30-60B over 2023-2032 (JCT)</td>
+                <td style="font-size:12px;color:var(--ash)">Manufacturing credit, not deployment. Excluded to maintain deployment-focused framing, but magnitude rivals several included categories. OBBBA FEOC restrictions may reduce utilization.</td>
+              </tr>
+              <tr>
+                <td class="label-col">EV Credits (section 30D/45W)</td>
+                <td style="font-size:12px;color:var(--ash)">Battery (indirectly: EV demand drives battery cost reduction)</td>
+                <td class="mono">$50-100B+ over 2023-2032</td>
+                <td style="font-size:12px;color:var(--ash)">Transportation policy, not energy generation. OBBBA terminated consumer EV credits after Sept. 30, 2025. However, EV credits are the largest single driver of battery technology cost reduction.</td>
+              </tr>
+              <tr>
+                <td class="label-col">CCS State Grants and EOR Exemptions</td>
+                <td style="font-size:12px;color:var(--ash)">CCS</td>
+                <td class="mono">$0.5-2B (indirect)</td>
+                <td style="font-size:12px;color:var(--ash)">Previously included as a chart stream; removed for insufficient sourcing. See State Incentives tab.</td>
+              </tr>
+              <tr>
+                <td class="label-col">Nuclear Decommissioning Fund Tax Benefits</td>
+                <td style="font-size:12px;color:var(--ash)">Nuclear</td>
+                <td class="mono">$1-3B cumulative</td>
+                <td style="font-size:12px;color:var(--ash)">Tax-deductible contributions to qualified decommissioning funds (section 468A). Modest magnitude; reflects deferred tax liability rather than direct public funding.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert alert-info"><span class="alert-icon">i</span><span class="alert-text">If MACRS, state property/sales tax exemptions, the full LPO portfolio, and Section 1603 allocation gaps were included, cumulative totals for solar and wind would increase by roughly 20-40%. Battery storage totals would increase significantly due to LPO manufacturing loans. Nuclear totals would increase modestly. CCS totals would be largely unchanged. The relative ranking of technologies is unlikely to change, but the absolute magnitudes would be materially larger.</span></div>
+      </div>
+abel" style="font-size:11px">08</span>
+          <span class="section-title" style="font-size:18px">Inflation Adjustment and Currency</span>
+        </div>
+        <div class="method-box">
+          <div class="method-box-title">Real 2024 USD</div>
+          <p>All values are expressed in real 2024 U.S. dollars. Nominal historical values are converted using the GDP implicit price deflator from OMB Historical Tables (Table 10.1), consistent with the deflator used in CRS RS22858. The GDP deflator is preferred over CPI for government spending comparisons because it better reflects the prices of goods and services government programs actually purchase.</p>
+          <p>Important caveats: (1) Energy equipment prices have fallen dramatically — solar module costs declined 99%+ since 1977 in real terms. Expressing early solar R&D in 2024 dollars gives it apparent parity with modern dollar amounts, but the purchasing power for actual hardware was very different. (2) For tax credits, the nominal value of foregone revenue is reported as stated by JCT/Treasury; inflation-adjusting these is less meaningful because they represent current-year revenue impacts.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      <div class="footer-name">Carbon <em>Middle Management</em></div>
+      <div style="font-family:var(--font-mono);font-size:10px;color:var(--ash);margin-top:var(--space-sm);line-height:1.6">U.S. Energy Public Funding: 50-Year Comparison<br>Research Report · March 2025</div>
+    </div>
+    <div class="footer-meta">Practice Areas<br>Policy Analysis<br>Climate Philanthropy<br>Regulatory Research</div>
+    <div class="footer-meta">Data Sources<br>CRS · EIA · JCT<br>LBNL · CPUC<br>CMM Synthesis</div>
+  </footer>
+
+</div>
+
+<!-- TOOLTIP -->
+<div id="chart-tooltip"></div>
+
+<script>
+// ─── v12 COLOR SYSTEM ───────────────────────────────────────────────
+const CMM = {
+  ink:        '#252628',
+  slate:      '#3B3D42',
+  ash:        '#6E6F69',
+  linen:      '#EAE6DE',
+  chalk:      '#FFFFFF',
+  plains:     '#B8A882',
+  violet:     '#535470',
+  aegean:     '#2A4A5E',
+  steel:      '#6B7C8D',
+  periwinkle: '#7B82C4',
+};
+
+// ─── PUBLIC FUNDING DATA ────────────────────────────────────────────────────
+const YEARS = Array.from({length:51}, (_,i) => 1975+i);
+
+function keyframes(kf) {
+  return YEARS.map(y => {
+    if (y <= kf[0][0]) return kf[0][1];
+    if (y >= kf[kf.length-1][0]) return kf[kf.length-1][1];
+    for (let i=0; i<kf.length-1; i++) {
+      if (y >= kf[i][0] && y <= kf[i+1][0]) {
+        const t = (y-kf[i][0])/(kf[i+1][0]-kf[i][0]);
+        return kf[i][1]+(kf[i+1][1]-kf[i][1])*t;
+      }
+    }
+    return 0;
+  });
+}
+
+const TECH_DATA = {
+  // ── NUCLEAR: DOE Office of Nuclear Energy (NE) full appropriation
+  // Sources: DOE NE Budget page (energy.gov/ne/our-budget); CRS RS22858; GAO EMD-79-52
+  // FY1979 peak: NE ~56% of total DOE energy R&D (~$9.6B real 2024$); post-TMI collapse;
+  // ARRA 2009 ~$2.5B NE; plateau $1.0–1.2B FY2012-18; rising to $1.5–1.8B FY2021-24
+  // ── NUCLEAR: DOE Office of Nuclear Energy (NE) appropriation
+  // Sources: CRS RS22858 (FY1948-2018 cumulative); DOE-NE budget page (FY2023-2025)
+  // FY1979 peak: CRS shows nuclear = ~50-60% of total DOE R&D peak (~$6-7B real 2016$)
+  // = ~$3.6-4.2B real 2016$ = ~$4.3-5.0B real 2024$. Chart uses $4.8B (upper estimate).
+  // FY2016-2024: DOE-NE enacted appropriations converted to real 2024 USD.
+  nuclear: { streams: [
+    { key:'rd',    label:'R&D (DOE-NE Appropriation)',  conf:'high',  color:'#252628', values: keyframes([[1975,2.4],[1979,4.8],[1982,3.0],[1986,1.8],[1990,1.6],[1995,1.1],[2000,0.9],[2005,1.0],[2009,2.5],[2012,1.3],[2016,1.0],[2017,1.1],[2018,1.2],[2019,1.3],[2020,1.4],[2021,1.5],[2022,1.7],[2023,1.8],[2024,1.7],[2025,1.6]]) },
+    { key:'tax',   label:'Tax Credits (§45U, 2023+)',  conf:'high',   color:'#535470', values: keyframes([[1975,0],[2022,0],[2023,2.5],[2024,2.8]]) },
+    { key:'grants',label:'Grants / DOE Programs',      conf:'mid',       color:'#8B8AA0', values: keyframes([[1975,.3],[1979,.6],[1985,.4],[1990,.3],[2000,.2],[2005,.2],[2009,.8],[2015,.3],[2022,.4],[2025,.5]]) },
+    { key:'loans', label:'Loan Guarantees (Vogtle/Palisades)', conf:'high', color:CMM.steel, values: keyframes([[1975,0],[2009,0],[2010,.4],[2014,.6],[2017,.5],[2020,.4],[2022,.3],[2023,.7],[2024,.5],[2025,.3]]) },
+    { key:'zec',   label:'State ZECs / Palisades',     conf:'mid',      color:CMM.aegean, values: keyframes([[1975,0],[2015,0],[2016,.1],[2017,.7],[2019,1.2],[2021,1.5],[2022,1.6],[2023,1.9],[2024,2.1],[2025,2.1]]) },
+  ]},
+  // ── SOLAR: EERE Solar Energy Technologies Office (SETO) appropriation
+  // Sources: DOE SETO FOA announcements; DOE FY2025 Budget in Brief ($318M SETO);
+  // CRS RS22858/R40913: FY2016=$241.6M, FY2017=$207.6M, FY2018=$241.6M, FY2019=$246.5M,
+  // FY2020=$280M, FY2021=$280M, FY2022=$290M base + $80M IIJA = $370M
+  // FY2023-2024: includes IIJA supplementals. ARRA 2009 spike ~$1.2B (multi-year grants).
+  solar: { streams: [
+    { key:'rd',    label:'R&D (EERE-SETO Appropriation)', conf:'high', color:'#252628', values: keyframes([[1975,.05],[1979,.5],[1982,.35],[1986,.07],[1990,.15],[2000,.15],[2005,.18],[2009,1.2],[2012,.35],[2013,.29],[2016,.28],[2017,.28],[2018,.28],[2019,.28],[2020,.30],[2021,.32],[2022,.39],[2023,.42],[2024,.38],[2025,.30]]) },
+    // Solar ITC: Pre-2022 anchored to JCT tax expenditure reports & EIA data.
+    // 2023+ values are JCT/Treasury projections (pre-OBBBA). Post-OBBBA JCT estimates show
+    // combined ITC declining ~$52B due to 2027 cliff and FEOC restrictions. Actual claims TBD.
+    { key:'tax',   label:'Fed Tax Credits (ITC)',    conf:'high',      color:'#535470', values: keyframes([[1975,0],[1978,.02],[1986,.01],[2005,.05],[2006,.3],[2009,1.0],[2012,2.0],[2015,3.5],[2018,5.5],[2020,6.0],[2022,7.5]]) },
+    { key:'grants',label:'Grants / DOE',                  conf:'mid', color:'#5A8070', values: keyframes([[1975,.02],[1979,.1],[2005,.1],[2009,1.5],[2012,.8],[2016,.6],[2020,.7],[2025,.8]]) },
+    { key:'rps',   label:'RPS Compliance',                conf:'mid', color:CMM.plains, values: keyframes([[1975,0],[2001,.05],[2005,.2],[2008,.5],[2012,1.2],[2015,1.8],[2017,2.2],[2019,2.8],[2022,3.5],[2025,4.0]]) },
+    { key:'nem',   label:'Net Metering †',               conf:'low',                color:CMM.steel,  values: keyframes([[1975,0],[1995,0],[2000,.02],[2005,.1],[2010,.4],[2013,.8],[2016,1.8],[2019,3.5],[2021,5.5],[2023,9.0],[2024,10.0],[2025,9.0]]) },
+    { key:'state', label:'State ITCs / Rebates',         conf:'low',          color:CMM.periwinkle, values: keyframes([[1975,0],[2000,.05],[2005,.15],[2009,.4],[2015,.4],[2022,.3],[2025,.3]]) },
+  ]},
+  // ── WIND: EERE Wind Energy Technologies Office appropriation
+  // Sources: CRS R40913 enacted figures: FY2016=$95.5M, FY2017=$90M, FY2018=$92M,
+  // FY2019=$92M, FY2020=$104M, FY2021=$110M, FY2022=$114M base + $100M IIJA = $214M
+  // FY2023-2024: includes IIJA supplementals (~$100M+/yr). FY2025: proposed cuts, IIJA expired.
+  // FY2025: combined wind+solar+hydrogen=$108M (OBBBA cuts); pre-2010 from CRS RS22858
+  wind: { streams: [
+    // Wind R&D: FY2025 value reflects proposed EERE cuts; enacted appropriation may differ.
+    { key:'rd',     label:'R&D (EERE-Wind Appropriation)', conf:'high', color:'#252628', values: keyframes([[1975,.02],[1979,.25],[1985,.1],[1992,.12],[2000,.14],[2005,.18],[2009,.7],[2012,.14],[2016,.10],[2017,.09],[2018,.09],[2019,.09],[2020,.10],[2021,.11],[2022,.22],[2023,.25],[2024,.22],[2025,.08]]) },
+    { key:'ptc',    label:'Fed Tax Credits (PTC)',        conf:'high',         color:'#535470', values: keyframes([[1975,0],[1992,.01],[1994,.2],[1999,.01],[2000,.4],[2002,.01],[2003,.8],[2005,1.2],[2010,2.0],[2014,1.8],[2016,3.0],[2019,4.0],[2022,3.5]]) },
+    { key:'grants', label:'Grants / DOE',                  conf:'mid', color:'#7A9CAD', values: keyframes([[1975,0],[2000,.1],[2005,.15],[2009,.8],[2015,.3],[2025,.3]]) },
+    { key:'rps',    label:'RPS Compliance',                conf:'mid', color:CMM.plains, values: keyframes([[1975,0],[1995,.02],[2000,.1],[2005,.4],[2009,.8],[2013,1.5],[2016,1.8],[2018,2.0],[2022,2.4],[2025,2.6]]) },
+    { key:'offshore',label:'Offshore Mandates',           conf:'low',            color:CMM.aegean, values: keyframes([[1975,0],[2018,0],[2019,.05],[2021,.15],[2023,.4],[2025,.7]]) },
+  ]},
+  // ── CCS: DOE Fossil Energy and Carbon Management (FECM) CCS-specific programs
+  // Sources: EIA 2023 subsidy report; CBO 2012; ARRA 2009 ~$3.4B CCS (multi-year, ~$700M/yr)
+  // CAUTION: FECM total budget ~$750–890M/yr FY2021-2022 but includes methane, critical minerals,
+  // hydrogen, NETL operations, and program direction — not just CCS. CCS-specific subset estimated
+  // at ~60–75% of FECM total for recent years. Values below represent the CCS-specific estimate.
+  ccs: { streams: [
+    { key:'rd',    label:'R&D (DOE-FECM CCS subset, estimated)', conf:'mid',  color:'#252628', values: keyframes([[1975,.02],[1990,.1],[2000,.2],[2005,.4],[2009,.9],[2012,.6],[2016,.45],[2017,.47],[2018,.50],[2019,.52],[2020,.55],[2021,.52],[2022,.55],[2023,.58],[2024,.55],[2025,.50]]) },
+    // §45Q: TIGTA found ~$1B total claims 2010–2019 (~$0.1B/yr avg). Post-IRA values are CMM projections
+    // based on JCT scoring and project pipeline; actual 2023–2025 claims not yet publicly reported.
+    { key:'tax',   label:'Tax Credits (§45Q)',           conf:'mid',            color:'#535470', values: keyframes([[1975,0],[2008,.01],[2010,.03],[2012,.10],[2015,.12],[2018,.15],[2020,.15],[2022,.15]]) },
+    { key:'grants',label:'Grants / DOE',                  conf:'mid', color:CMM.plains, values: keyframes([[1975,0],[2000,.08],[2005,.2],[2009,.5],[2012,.3],[2020,.3],[2025,.35]]) },
+    // State / RGGI stream removed: RGGI does not directly fund CCS; no defensible annual data series exists for indirect state CCS support
+  ]},
+  // ── BATTERY: DOE Vehicle Technologies Office (VTO) + Energy Storage programs
+  // Sources: DOE FY2025 BIB (VTO=$502M req); DOE FY2023 CBJ (VTO=$602M req);
+  // ARRA 2009 smart grid/storage ~$400M; FY2016-2022 VTO enacted ~$280–450M/yr
+  // Note: VTO includes EVs broadly; storage-specific subset estimated at ~25-35%
+  battery: { streams: [
+    { key:'rd',    label:'R&D (DOE-VTO/Storage Appropriation)', conf:'mid', color:'#252628', values: keyframes([[1975,.01],[1990,.05],[2000,.08],[2009,.4],[2012,.2],[2016,.28],[2017,.30],[2018,.32],[2019,.32],[2020,.35],[2021,.38],[2022,.42],[2023,.45],[2024,.50],[2025,.50]]) },
+    { key:'tax',   label:'Tax Credits (§48C/ITC)',     conf:'mid',              color:'#535470', values: keyframes([[1975,0],[2010,.02],[2015,.1],[2018,.3],[2020,.5],[2022,.8]]) },
+    { key:'grants',label:'Grants / DOE',                        conf:'mid', color:'#5A5A5A', values: keyframes([[1975,0],[2009,.5],[2012,.25],[2016,.2],[2022,.5],[2025,.6]]) },
+    { key:'sgip',  label:'CA SGIP / State Mandates',   conf:'mid',            color:CMM.steel, values: keyframes([[1975,0],[2001,.01],[2010,.06],[2017,.15],[2020,.5],[2025,.7]]) },
+    // NEM+Storage stream removed: no source tracks this split; conceptually questionable since
+    // batteries reduce NEM cost transfers by enabling self-consumption. NEM 3.0's structural
+    // preference for storage is noted in the battery timeline narrative instead.
+  ]},
+  // ── GEOTHERMAL: EERE Geothermal Technologies Office (GTO) appropriation
+  // Sources: CRS R40913 enacted: FY2016=$70M, FY2017=$84M, FY2018=$105M,
+  // FY2019=$105M, FY2020=$148M, FY2021=$150M, FY2022=$162M
+  // FY2025 enacted=$488M (IIJA-inflated; unusually high); FY2026 request=$125M
+  // Pre-2010 from CRS RS22858; FY1979 peak ~$350M real 2024$
+  geo: { streams: [
+    { key:'rd',    label:'R&D (EERE-GTO Appropriation)', conf:'high',  color:'#252628', values: keyframes([[1975,.05],[1979,.35],[1982,.2],[1990,.08],[2000,.06],[2005,.08],[2009,.22],[2012,.10],[2016,.07],[2017,.08],[2018,.09],[2019,.09],[2020,.12],[2021,.11],[2022,.20],[2023,.25],[2024,.30],[2025,.49]]) },
+    { key:'tax',   label:'Tax Credits (ITC/PTC)',         conf:'low', color:'#535470', values: keyframes([[1975,0],[2000,.04],[2005,.08],[2010,.15],[2022,.25]]) },
+    { key:'grants',label:'Grants / DOE',                  conf:'low', color:CMM.periwinkle, values: keyframes([[1975,0],[1979,.04],[2000,.03],[2009,.12],[2015,.05],[2025,.07]]) },
+    { key:'rps',   label:'State RPS Carve-outs',         conf:'low',          color:CMM.aegean, values: keyframes([[1975,0],[2000,.04],[2005,.08],[2010,.12],[2020,.18],[2025,.28]]) },
+  ]}
+};
+
+const CHART_IDS = { nuclear:'chart-nuclear', solar:'chart-solar', wind:'chart-wind', ccs:'chart-ccs', battery:'chart-battery', geo:'chart-geo' };
+const ANN_YEARS  = [1979, 1992, 2005, 2009, 2016, 2022];
+const ANN_LABELS = ['FY79 Peak','PTC','EPAct','ARRA','ZECs','IRA'];
+
+let activeFilter = 'all';
+
+// Compute global max across all techs for shared y-axis scale
+function computeGlobalMax() {
+  let globalMax = 0;
+  Object.keys(TECH_DATA).forEach(techKey => {
+    const streams = getStreams(techKey);
+    const stacked = YEARS.map((_,i) => {
+      let acc=0; return streams.map(s => { acc+=s.values[i]; return acc; });
+    });
+    const techMax = Math.max(...stacked.map(r => r[r.length-1]), 0.1);
+    if (techMax > globalMax) globalMax = techMax;
+  });
+  return globalMax * 1.18;
+}
+
+function getStreams(techKey) {
+  let s = TECH_DATA[techKey].streams;
+  if (activeFilter==='rd')    s = s.filter(x => x.key==='rd');
+  if (activeFilter==='tax')   s = s.filter(x => ['tax','ptc'].includes(x.key));
+  if (activeFilter==='state') s = s.filter(x => ['rps','zec','sgip','nem','offshore','state'].includes(x.key));
+  return s;
+}
+
+function drawChart(techKey, sharedYMax) {
+  const canvasEl = document.getElementById(CHART_IDS[techKey]);
+  if (!canvasEl) return;
+  const streams = getStreams(techKey);
+  const n = YEARS.length;
+
+  const dpr = window.devicePixelRatio || 1;
+  const W   = canvasEl.parentElement.clientWidth - 48 || 420;
+  const H   = 200;
+  canvasEl.width  = W * dpr;
+  canvasEl.height = H * dpr;
+  canvasEl.style.width  = W + 'px';
+  canvasEl.style.height = H + 'px';
+  const ctx = canvasEl.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const padL=42, padR=8, padT=14, padB=26;
+  const cW = W-padL-padR, cH = H-padT-padB;
+
+  const stacked = YEARS.map((_,i) => {
+    let acc=0; return streams.map(s => { acc+=s.values[i]; return acc; });
+  });
+  const yMax = sharedYMax !== undefined ? sharedYMax : Math.max(...stacked.map(r => r[r.length-1]), 0.1) * 1.18;
+
+  // White background (v12: chalk)
+  ctx.fillStyle = CMM.chalk;
+  ctx.fillRect(0,0,W,H);
+
+  // Grid lines: dashed plains, very faint
+  const nGrids = 4;
+  for (let g=0; g<=nGrids; g++) {
+    const y = padT + cH - (g/nGrids)*cH;
+    ctx.strokeStyle = CMM.plains;
+    ctx.lineWidth   = 0.5;
+    ctx.setLineDash([2,4]);
+    ctx.globalAlpha = 0.35;
+    ctx.beginPath(); ctx.moveTo(padL,y); ctx.lineTo(padL+cW,y); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.globalAlpha = 1;
+    ctx.fillStyle   = CMM.ash;
+    ctx.font        = `300 9px 'Inconsolata', monospace`;
+    ctx.textAlign   = 'right';
+    const val = (g/nGrids)*yMax;
+    ctx.fillText(val<1 ? val.toFixed(1) : val.toFixed(0), padL-4, y+3);
+  }
+
+  // Policy era annotation lines
+  ctx.strokeStyle = CMM.plains;
+  ctx.lineWidth   = 0.8;
+  ctx.setLineDash([2,3]);
+  ctx.globalAlpha = 0.4;
+  ANN_YEARS.forEach(ay => {
+    const xi = padL + ((ay-1975)/(n-1))*cW;
+    ctx.beginPath(); ctx.moveTo(xi, padT); ctx.lineTo(xi, padT+cH); ctx.stroke();
+  });
+  ctx.setLineDash([]);
+  ctx.globalAlpha = 1;
+
+  // Area fills
+  for (let si=streams.length-1; si>=0; si--) {
+    ctx.beginPath();
+    for (let i=0; i<n; i++) {
+      const x = padL+(i/(n-1))*cW;
+      const y = padT+cH-(stacked[i][si]/yMax)*cH;
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    for (let i=n-1; i>=0; i--) {
+      const x    = padL+(i/(n-1))*cW;
+      const base = si>0 ? stacked[i][si-1] : 0;
+      const y    = padT+cH-(base/yMax)*cH;
+      ctx.lineTo(x,y);
+    }
+    ctx.closePath();
+    ctx.fillStyle   = streams[si].color;
+    ctx.globalAlpha = 0.78;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    // edge line
+    ctx.beginPath();
+    for (let i=0; i<n; i++) {
+      const x = padL+(i/(n-1))*cW;
+      const y = padT+cH-(stacked[i][si]/yMax)*cH;
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle = streams[si].color;
+    // Confidence-based line style: high=solid, mid=dashed, low=dotted
+    const conf = streams[si].conf || 'high';
+    if (conf === 'low') ctx.setLineDash([3,3]);
+    else if (conf === 'mid') ctx.setLineDash([7,3]);
+    else ctx.setLineDash([]);
+    ctx.lineWidth   = 1.0;
+    ctx.globalAlpha = 0.45;
+    ctx.stroke();
+    ctx.setLineDash([]); // reset
+    ctx.globalAlpha = 1;
+  }
+
+  // X axis ticks
+  ctx.fillStyle = CMM.ash;
+  ctx.font      = `300 9px 'Inconsolata', monospace`;
+  ctx.textAlign = 'center';
+  [1975,1985,1995,2005,2015,2025].forEach(y => {
+    const xi = padL+((y-1975)/(n-1))*cW;
+    ctx.fillText(y, xi, H-padB+13);
+    ctx.strokeStyle = CMM.plains;
+    ctx.lineWidth   = 0.5;
+    ctx.globalAlpha = 0.3;
+    ctx.beginPath(); ctx.moveTo(xi,padT+cH); ctx.lineTo(xi,padT+cH+3); ctx.stroke();
+    ctx.globalAlpha = 1;
+  });
+
+  // Y axis rule (IBM: axis as structural element)
+  ctx.strokeStyle = CMM.ink;
+  ctx.lineWidth   = 0.8;
+  ctx.globalAlpha = 0.3;
+  ctx.beginPath(); ctx.moveTo(padL,padT); ctx.lineTo(padL,padT+cH+1); ctx.stroke();
+  // X axis base rule
+  ctx.beginPath(); ctx.moveTo(padL,padT+cH); ctx.lineTo(padL+cW,padT+cH); ctx.stroke();
+  ctx.globalAlpha = 1;
+
+  // Y label
+  ctx.save();
+  ctx.translate(9, padT+cH/2);
+  ctx.rotate(-Math.PI/2);
+  ctx.fillStyle = CMM.ash;
+  ctx.font      = `300 8px 'Inconsolata', monospace`;
+  ctx.textAlign = 'center';
+  ctx.fillText('$B/yr', 0, 0);
+  ctx.restore();
+
+  // Annotation labels
+  ANN_YEARS.forEach((ay,idx) => {
+    const xi = padL+((ay-1975)/(n-1))*cW;
+    ctx.fillStyle   = CMM.ash;
+    ctx.font        = `400 7.5px 'Inconsolata', monospace`;
+    ctx.textAlign   = 'center';
+    ctx.globalAlpha = 0.65;
+    ctx.fillText(ANN_LABELS[idx], xi, padT+9);
+    ctx.globalAlpha = 1;
+  });
+
+  canvasEl._chartData = { streams, stacked, yMax, padL, padR, padT, padB, cW, cH, n, W, H };
+}
+
+function buildLegends() {
+  // Source annotations per stream key
+  const SOURCES = {
+    rd:     'DOE Budget Authority — CRS RS22858, DOE Office budget pages',
+    tax:    'JCT Tax Expenditure Estimates; EIA FY2016–2022 subsidy report',
+    ptc:    'JCT Tax Expenditure Estimates; CRS wind energy reports',
+    grants: 'EIA FY2016–2022 (Table A6); DOE USASpending.gov',
+    loans:  'DOE Loan Programs Office; CRS R47293 (EPAct Title XVII)',
+    zec:    'State PUC orders (NY, IL, NJ, CT, OH); MI state appropriation',
+    rps:    'LBNL RPS Status Reports (annual); Barbose et al. 2019',
+    nem:    'LBNL/Brattle (2025); CPUC Public Advocates (2024); CMM estimate',
+    state:  'State program documents; DSIRE database; CMM compilation',
+    offshore:'State PUC OREC proceedings; BOEM lease data',
+    sgip:   'CPUC SGIP program reports; Morgan Lewis (2026)',
+  };
+  Object.keys(TECH_DATA).forEach(k => {
+    const el = document.getElementById('leg-'+k);
+    if (!el) return;
+    const s = getStreams(k);
+    el.innerHTML = s.map(x => {
+      const src = SOURCES[x.key] || 'CMM synthesis';
+      return `<div class="area-legend-item" title="${src}" style="cursor:help"><div class="area-legend-swatch" style="background:${x.color}"></div>${x.label}</div>`;
+    }).join('');
+  });
+}
+
+let useSharedScale = true;
+
+function drawAllCharts() {
+  const sharedYMax = useSharedScale ? computeGlobalMax() : undefined;
+  Object.keys(TECH_DATA).forEach(k => drawChart(k, sharedYMax));
+  buildLegends();
+}
+
+// ─── SCENARIO STATE ────────────────────────────────────────────
+let scenarioNEM    = 'include';  // 'include' | 'exclude'
+let scenarioPA     = 'exclude';  // 'include' | 'exclude'
+let scenarioFuture = 'current';  // 'current' | 'cliff'
+
+// Mid-range cumulative totals by scenario component ($B)
+const TECH_BASE = {
+  nuclear:    { base:158, nemAdd:0,   paAdd:50,  cliffAdd:22,  color:'#535470' },
+  solar:      { base:165, nemAdd:35,  paAdd:0,   cliffAdd:-35, color:'#2A4A5E' },
+  wind:       { base:131, nemAdd:2,   paAdd:0,   cliffAdd:-20, color:'#6B7C8D' },
+  ccs:        { base:28,  nemAdd:0,   paAdd:0,   cliffAdd:5,   color:'#B8A882' },
+  battery:    { base:32,  nemAdd:2,   paAdd:0,   cliffAdd:12,  color:'#252628' },
+  geothermal: { base:19,  nemAdd:0,   paAdd:0,   cliffAdd:4,   color:'#7B82C4' },
+};
+// Low/high ranges for display
+const TECH_RANGE = {
+  nuclear:    { lo:155, hi:205 },
+  solar:      { lo:165, hi:290 },
+  wind:       { lo:103, hi:160 },
+  ccs:        { lo:18,  hi:39  },
+  battery:    { lo:20,  hi:44  },
+  geothermal: { lo:13,  hi:26  },
+};
+
+function calcTotal(key) {
+  const t = TECH_BASE[key];
+  let v = t.base;
+  if (scenarioNEM    === 'include') v += t.nemAdd;
+  if (scenarioPA     === 'include') v += t.paAdd;
+  // OBBBA cliff scenario removed — retrospective report only
+  return Math.max(v, 0);
+}
+
+function renderScenarioBars() {
+  const container = document.getElementById('scenarioBars');
+  if (!container) return;
+
+  const techOrder = ['nuclear','solar','wind','ccs','battery','geothermal'];
+  const labels    = { nuclear:'Nuclear', solar:'Solar', wind:'Wind', ccs:'CCS', battery:'Battery', geothermal:'Geothermal' };
+  const totals    = techOrder.map(k => calcTotal(k));
+  const maxVal    = Math.max(...totals);
+
+  let html = '';
+  techOrder.forEach((k,i) => {
+    const val   = totals[i];
+    const pct   = maxVal > 0 ? (val/maxVal)*90 : 0;
+    const range = TECH_RANGE[k];
+    const color = TECH_BASE[k].color;
+
+    // build range label
+    let loAdj = range.lo, hiAdj = range.hi;
+    if (scenarioNEM    === 'include') { loAdj += TECH_BASE[k].nemAdd * 0.6; hiAdj += TECH_BASE[k].nemAdd * 1.4; }
+    if (scenarioPA     === 'include') { loAdj += TECH_BASE[k].paAdd * 0.3;  hiAdj += TECH_BASE[k].paAdd * 1.5; }
+    if (scenarioFuture === 'cliff')   { loAdj += TECH_BASE[k].cliffAdd * 0.7; hiAdj += TECH_BASE[k].cliffAdd * 1.3; }
+    loAdj = Math.max(loAdj, 5); hiAdj = Math.max(hiAdj, loAdj + 2);
+
+    html += `<div class="bar-row" style="margin-bottom:12px">
+      <div class="bar-label">${labels[k]}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${pct}%;background:${color};transition:width 0.6s cubic-bezier(.16,1,.3,1)">
+          <span class="bar-val">~$${Math.round(val)}B</span>
+        </div>
+      </div>
+      <div class="bar-val-outside">$${Math.round(loAdj)}–${Math.round(hiAdj)}B</div>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+function setScenario(type, value, btn) {
+  if (type === 'nem')    scenarioNEM    = value;
+  if (type === 'pa')     scenarioPA     = value;
+  if (type === 'future') scenarioFuture = value;
+  // update button group
+  const allBtns = btn.parentElement.querySelectorAll('.scenario-btn');
+  allBtns.forEach(b => {
+    const bType  = b.getAttribute('onclick').match(/setScenario\('([^']+)'/)?.[1];
+    const bValue = b.getAttribute('onclick').match(/setScenario\('[^']+','([^']+)'/)?.[1];
+    if (bType === type) b.classList.toggle('active', bValue === value);
+  });
+  renderScenarioBars();
+}
+
+function setScale(mode, btn) {
+  useSharedScale = (mode === 'shared');
+  document.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (document.getElementById('tab-charts').classList.contains('active')) drawAllCharts();
+}
+
+// Tooltip
+const tooltip = document.getElementById('chart-tooltip');
+function setupTooltip(el, techKey) {
+  el.addEventListener('mousemove', e => {
+    const d = el._chartData;
+    if (!d) return;
+    const rect = el.getBoundingClientRect();
+    const relX = e.clientX - rect.left - d.padL;
+    if (relX < 0 || relX > d.cW) { tooltip.style.display='none'; return; }
+    const yi    = Math.round((relX/d.cW)*(d.n-1));
+    const year  = YEARS[yi];
+    const s     = getStreams(techKey);
+    const total = s.reduce((a,x)=>a+x.values[yi],0);
+    let html = `<div style="color:${CMM.plains};margin-bottom:4px;font-size:10px;letter-spacing:.1em">${year}</div>`;
+    s.forEach(x => {
+      if (x.values[yi]<0.005) return;
+      html += `<div style="display:flex;justify-content:space-between;gap:16px"><span style="color:${x.color}">${x.label}</span><span>$${x.values[yi].toFixed(2)}B</span></div>`;
+    });
+    html += `<div style="border-top:1px solid #444;margin-top:4px;padding-top:4px;display:flex;justify-content:space-between"><span style="color:${CMM.plains}">Total</span><span>$${total.toFixed(2)}B</span></div>`;
+    tooltip.innerHTML = html;
+    tooltip.style.display = 'block';
+    tooltip.style.left    = (e.clientX+16)+'px';
+    tooltip.style.top     = (e.clientY-20)+'px';
+  });
+  el.addEventListener('mouseleave', () => { tooltip.style.display='none'; });
+}
+
+function setupAllTooltips() {
+  Object.keys(TECH_DATA).forEach(k => {
+    const el = document.getElementById(CHART_IDS[k]);
+    if (el && !el._tip) { setupTooltip(el, k); el._tip=true; }
+  });
+}
+
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (name==='charts') requestAnimationFrame(() => { drawAllCharts(); setupAllTooltips(); });
+  if (name==='overview') renderScenarioBars();
+}
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  drawAllCharts(); setupAllTooltips();
+}
+
+window.addEventListener('load', () => {
+  renderScenarioBars();
+});
+
+window.addEventListener('resize', () => {
+  if (document.getElementById('tab-charts').classList.contains('active')) drawAllCharts();
+});
+</script>
+</body>
+</html>
